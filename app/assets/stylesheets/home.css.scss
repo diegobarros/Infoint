@@ -1,3 +1,297 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+#container {
+  margin: 15px auto 0 auto;
+  width:1024px;
+  height:768px;
+}
+
+a { text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+p {
+  text-align:justify;
+  line-height:1.5;
+  margin: 5px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:12pt;
+}
+
+/*
+ * DEFINIÇÃO DE CORES
+ */
+.vermelho {  background-color: rgba(255, 0, 0, 1);    }
+.laranja  {  background-color: rgba(247, 139, 30, 1);  } 
+.amarelo  {  background-color: rgba(255, 255, 0, 1);   } 
+.verde-limao {  background-color: rgba(128, 255, 0, 1); } 
+.verde {  background-color: rgba(0, 166, 0, 1);     } 
+.azul  {  background-color: rgba(0, 202, 242, 1);   }
+.lilas {  background-color: rgba(153, 102, 255, 1); }
+.magenta {  background-color: rgba(230, 0, 153, 1); } 
+
+/*
+ * CABEÇALHO
+ */
+#cabecalho-principal {
+  padding:10px;
+  height: 90px;
+  margin:0 5px;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  background-color: #FFF;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 10px 16px #AAAAAA;
+  
+  background-color:#B8D8FB; 
+  
+  background: #fcfcfc; 
+  background: linear-gradient(top, #fcfcfc 0%,#dad8d8 100%); 
+  background: -moz-linear-gradient(top, #fcfcfc 0%, #dad8d8 100%); 
+  background: -webkit-linear-gradient(top, #fcfcfc 0%,#dad8d8 100%);
+}
+
+
+#logo-inicio {
+  width: 240px;
+  margin-top: 8px;
+}
+
+#logo-inicio a {
+  color:black;
+}
+
+#logo-inicio a:hover {
+  text-decoration:none;
+}
+
+#logo-inicio h1 {
+  font-size: 32pt;
+  font-family: 'Orbitron', sans-serif;
+  text-align:center;
+  margin-left:4px;
+  color:#333;
+  text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+#logo-inicio h2 {
+  font-size: 12pt;
+  font-family: 'Gruppo', cursive;
+  text-align:center;
+  color: #444444;
+  text-shadow: 1px 1px 1px #FFFFFF;
+}
+
+
+/*
+ * NAVEGAÇÃO 
+ */
+
+nav {
+
+  height: 50px;
+  font-size:14pt;
+  background-color: #111111;    
+    border: 1px solid #222222;
+    box-shadow: 0 1px 1px #777777, 0 1px 0 #666666 inset;
+    border-radius: 6px 6px 6px 6px;
+    
+    background-image: linear-gradient(#444444, #111111);
+    background-image: -moz-linear-gradient(#444444, #111111);
+    background-image: -webkit-linear-gradient(#444444, #111111);
+    background-image: -o-linear-gradient(#444444, #111111);
+}
+
+nav ul {
+  padding: 5px;
+  margin: 8px auto;
+  float:left;
+}
+
+nav ul li {
+  display: inline-block;  
+  border-right: 1px solid #222;
+  box-shadow: 1px 0 0 #444;
+  position: relative;
+}
+
+
+nav a {
+  padding: 12px 30px;
+  color: #999;
+  text-shadow: 0 1px 0 #000;
+  color: #DDD;
+}
+
+.opcao-1 a:hover {
+  color: rgba(255, 0, 0, 1);
+  text-shadow: 0px 0px 6px rgba(255, 0, 0, 1);
+}
+
+.opcao-2 a:hover {
+  color: rgba(247, 139, 30, 1);
+  text-shadow: 0px 0px 6px rgba(247, 139, 30, 1);
+  
+}
+
+.opcao-3 a:hover {
+  color: rgba(128, 255, 0, 1);
+  text-shadow: 0px 0px 6px rgba(128, 255, 0, 1);
+}
+
+.opcao-4 a:hover {
+  color: rgba(0, 202, 242, 1);
+  text-shadow: 0px 0px 6px rgba(0, 202, 242, 1); 
+}
+
+.opcao-5 a:hover {
+  color: rgba(153, 102, 255, 1);
+  text-shadow: 0px 0px 6px rgba(153, 102, 255, 1); 
+}
+
+.conteudo {
+  width: 982px;
+  min-height:515px;
+  margin: 0 5px;
+  padding-top: 30px;
+  padding-right: 30px;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  background-color:#FFFFFF;
+  box-shadow: 0 10px 16px #AAAAAA;
+}
+
+.conteudo aside {
+  width: 365px;
+  height:100%;
+  padding: 10px;
+  float: left;
+}
+
+.conteudo article {
+  padding: 0 5px;
+  margin-left: 385px;
+}
+
+article > header {
+  height: 30px;
+  padding:0;
+  padding-bottom: 20px;
+  border:none;
+  box-shadow: none;
+  background:none;
+  border-bottom: 4px solid #C9C0BB;
+}
+
+.conteudo article header h2 {
+  font-family: 'Ubuntu', sans-serif;
+  color:#555;
+  font-weight:300;
+  font-size: 26pt;
+  text-shadow: 2px 2px 4px #666;
+}
+
+.conteudo ul li h3 {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight:300;
+  font-size: 16pt;
+}
+
+.conteudo article p {
+  margin:10px 0;
+  padding: 10px;
+}
+
+.conteudo article ul {
+  padding: 10px 10px 5px 10px;
+
+}
+
+.conteudo article ul li {
+  margin: 15px 15px 25px 15px;
+  text-align:justify;
+}
+
+/*
+ * RODAPÉ
+ */
+
+footer {
+  padding: 15px 10px;
+  height: 100px;
+  border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  box-shadow: 0 10px 16px #AAAAAA;
+  margin: 0 5px;
+  /*background-color: #3F3F3F;*/
+  /*background-color:#d5d9dc;*/
+  
+  /*background-color: #C9DBEC;*/
+  position:relative;
+  
+  /*background-color: #35AFE3;
+    background-image: -moz-linear-gradient(center top , #45C7EB, #2698DB);*/
+   background-color: #FFF;
+
+}
+
+
+
+footer > hr {
+  width: 20%;
+  height: 8px;
+  top: 0;
+  position:absolute;
+}
+
+.linha-1 { left: 0; }
+.linha-2 { left: 20%; }
+.linha-3 { left: 40%; }
+.linha-4 { left: 60%; }
+.linha-5 { left: 80%; }
+
+
+footer div {
+  height: 100%;
+}
+
+#direitos-autorais {
+  float: left;
+  width: 500px;
+  padding:10px;
+}
+
+#direitos-autorais span {
+  text-shadow: 0 2px 2px #888;
+}
+
+#logos-tecnologias {
+  margin-left: 500px; /* Para acrescentar mais um logo altere a margem esquerda*/
+  padding-left:200px;
+}
+
+
+.logo-open-source {
+  width:68px;
+  height:80px;
+  margin-top:15px;
+  float:left;
+}
+
+.logo-html-5{
+  width:197px;
+  height:64px;
+  padding-top:24px;
+  margin-left:95px;
+}
