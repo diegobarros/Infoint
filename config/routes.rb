@@ -1,4 +1,10 @@
 Infoint::Application.routes.draw do
+  get "teclado/index"
+
+  get "teclado/estudar_teclado"
+
+  get "teclado/exercitar_teclado"
+
   get "home/index"
 
   # The priority is based upon order of creation:
