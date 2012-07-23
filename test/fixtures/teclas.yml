@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  teclado: 
+  categoria_tecla: 
+  nome: MyString
+  descricao: MyText
+
+two:
+  teclado: 
+  categoria_tecla: 
+  nome: MyString
+  descricao: MyText
