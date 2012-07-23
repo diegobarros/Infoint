@@ -3402,3 +3402,16 @@ Migrating to CreateTeclas (20120723145538)
   [1m[36m (74.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723145538')[0m
   [1m[35m (0.3ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+Migrating to CreateCategoriaTeclas (20120723125705)
+Migrating to CreateIdiomas (20120723134402)
+Migrating to CreateTeclados (20120723141051)
+Migrating to CreateTeclas (20120723145538)
+Migrating to CreateCaracteres (20120723150843)
+  [1m[35m (212.6ms)[0m  CREATE TABLE `caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tecla_id` int(11), `posicao_caractere_id` int(11), `simbolo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (392.5ms)[0m  [1mCREATE INDEX `index_caracteres_on_tecla_id` ON `caracteres` (`tecla_id`)[0m
+  [1m[35m (335.5ms)[0m  CREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)
+  [1m[36m (83.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')[0m
+  [1m[35m (0.2ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 

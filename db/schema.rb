@@ -11,7 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723145538) do
+ActiveRecord::Schema.define(:version => 20120723150843) do
+
+  create_table "caracteres", :force => true do |t|
+    t.integer  "tecla_id"
+    t.integer  "posicao_caractere_id"
+    t.string   "simbolo",              :null => false
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "caracteres", ["posicao_caractere_id"], :name => "index_caracteres_on_posicao_caractere_id"
+  add_index "caracteres", ["tecla_id"], :name => "index_caracteres_on_tecla_id"
 
   create_table "categoria_teclas", :force => true do |t|
     t.string   "nome",       :limit => 25, :null => false
