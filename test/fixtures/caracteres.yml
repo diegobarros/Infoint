@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  tecla: 
+  posicao_caractere: 
+  simbolo: MyString
+
+two:
+  tecla: 
+  posicao_caractere: 
+  simbolo: MyString

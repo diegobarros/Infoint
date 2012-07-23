@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723141051) do
+ActiveRecord::Schema.define(:version => 20120723145538) do
 
   create_table "categoria_teclas", :force => true do |t|
     t.string   "nome",       :limit => 25, :null => false
@@ -41,5 +41,17 @@ ActiveRecord::Schema.define(:version => 20120723141051) do
   end
 
   add_index "teclados", ["idioma_id"], :name => "index_teclados_on_idioma_id"
+
+  create_table "teclas", :force => true do |t|
+    t.integer  "teclado_id"
+    t.integer  "categoria_tecla_id"
+    t.string   "nome",               :null => false
+    t.text     "descricao",          :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
+
+  add_index "teclas", ["categoria_tecla_id"], :name => "index_teclas_on_categoria_tecla_id"
+  add_index "teclas", ["teclado_id"], :name => "index_teclas_on_teclado_id"
 
 end
