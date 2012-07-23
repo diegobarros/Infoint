@@ -3370,3 +3370,21 @@ Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
 Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (204.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (292.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+  [1m[35m (80.4ms)[0m  CREATE TABLE `posicao_caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `posicao` varchar(10) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (49.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120720200333')[0m
+Migrating to CreateCategoriaTeclas (20120723125705)
+  [1m[35m (82.6ms)[0m  CREATE TABLE `categoria_teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(25) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (49.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723125705')[0m
+Migrating to CreateIdiomas (20120723134402)
+  [1m[35m (91.0ms)[0m  CREATE TABLE `idiomas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sigla` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, `nome_nativo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (49.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723134402')[0m
+Migrating to CreateTeclados (20120723141051)
+  [1m[35m (233.3ms)[0m  CREATE TABLE `teclados` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `idioma_id` int(11), `padrao` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (158.5ms)[0m  [1mCREATE INDEX `index_teclados_on_idioma_id` ON `teclados` (`idioma_id`)[0m
+  [1m[35m (49.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723141051')
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
