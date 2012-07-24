@@ -3980,3 +3980,256 @@ Migrating to CreateCaracteres (20120723150843)
   [1m[36m (335.1ms)[0m  [1mCREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)[0m
   [1m[35m (54.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')
   [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (250.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (318.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+  [1m[35m (95.5ms)[0m  CREATE TABLE `posicao_caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `posicao` varchar(10) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120720200333')[0m
+Migrating to CreateCategoriaTeclas (20120723125705)
+  [1m[35m (116.3ms)[0m  CREATE TABLE `categoria_teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(25) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723125705')[0m
+Migrating to CreateIdiomas (20120723134402)
+  [1m[35m (109.4ms)[0m  CREATE TABLE `idiomas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sigla` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, `nome_nativo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (74.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723134402')[0m
+Migrating to CreateTeclados (20120723141051)
+  [1m[35m (99.6ms)[0m  CREATE TABLE `teclados` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `idioma_id` int(11), `padrao` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (150.1ms)[0m  [1mCREATE INDEX `index_teclados_on_idioma_id` ON `teclados` (`idioma_id`)[0m
+  [1m[35m (32.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723141051')
+Migrating to CreateTeclas (20120723145538)
+  [1m[36m (82.8ms)[0m  [1mCREATE TABLE `teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `teclado_id` int(11), `categoria_tecla_id` int(11), `nome` varchar(255) NOT NULL, `descricao` text NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (125.3ms)[0m  CREATE INDEX `index_teclas_on_teclado_id` ON `teclas` (`teclado_id`)
+  [1m[36m (133.9ms)[0m  [1mCREATE INDEX `index_teclas_on_categoria_tecla_id` ON `teclas` (`categoria_tecla_id`)[0m
+  [1m[35m (41.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723145538')
+Migrating to CreateCaracteres (20120723150843)
+  [1m[36m (82.3ms)[0m  [1mCREATE TABLE `caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tecla_id` int(11), `posicao_caractere_id` int(11), `simbolo` varchar(255) NOT NULL, `descricao` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (243.9ms)[0m  CREATE INDEX `index_caracteres_on_tecla_id` ON `caracteres` (`tecla_id`)
+  [1m[36m (250.1ms)[0m  [1mCREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)[0m
+  [1m[35m (59.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (198.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (296.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+  [1m[35m (154.5ms)[0m  CREATE TABLE `posicao_caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `posicao` varchar(10) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.8ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120720200333')[0m
+Migrating to CreateCategoriaTeclas (20120723125705)
+  [1m[35m (98.9ms)[0m  CREATE TABLE `categoria_teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(25) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (49.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723125705')[0m
+Migrating to CreateIdiomas (20120723134402)
+  [1m[35m (90.5ms)[0m  CREATE TABLE `idiomas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sigla` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, `nome_nativo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723134402')[0m
+Migrating to CreateTeclados (20120723141051)
+  [1m[35m (74.5ms)[0m  CREATE TABLE `teclados` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `idioma_id` int(11), `padrao` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (158.5ms)[0m  [1mCREATE INDEX `index_teclados_on_idioma_id` ON `teclados` (`idioma_id`)[0m
+  [1m[35m (42.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723141051')
+Migrating to CreateTeclas (20120723145538)
+  [1m[36m (81.8ms)[0m  [1mCREATE TABLE `teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `teclado_id` int(11), `categoria_tecla_id` int(11), `nome` varchar(255) NOT NULL, `descricao` text NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (149.9ms)[0m  CREATE INDEX `index_teclas_on_teclado_id` ON `teclas` (`teclado_id`)
+  [1m[36m (198.8ms)[0m  [1mCREATE INDEX `index_teclas_on_categoria_tecla_id` ON `teclas` (`categoria_tecla_id`)[0m
+  [1m[35m (77.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723145538')
+Migrating to CreateCaracteres (20120723150843)
+  [1m[36m (234.9ms)[0m  [1mCREATE TABLE `caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tecla_id` int(11), `posicao_caractere_id` int(11), `simbolo` varchar(255) NOT NULL, `descricao` text, `codigo_html` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (311.0ms)[0m  CREATE INDEX `index_caracteres_on_tecla_id` ON `caracteres` (`tecla_id`)
+  [1m[36m (284.3ms)[0m  [1mCREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)[0m
+  [1m[35m (33.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (173.8ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (291.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+  [1m[35m (168.2ms)[0m  CREATE TABLE `posicao_caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `posicao` varchar(10) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120720200333')[0m
+Migrating to CreateCategoriaTeclas (20120723125705)
+  [1m[35m (91.0ms)[0m  CREATE TABLE `categoria_teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(25) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (49.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723125705')[0m
+Migrating to CreateIdiomas (20120723134402)
+  [1m[35m (107.7ms)[0m  CREATE TABLE `idiomas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sigla` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, `nome_nativo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (57.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723134402')[0m
+Migrating to CreateTeclados (20120723141051)
+  [1m[35m (116.1ms)[0m  CREATE TABLE `teclados` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `idioma_id` int(11), `padrao` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (166.3ms)[0m  [1mCREATE INDEX `index_teclados_on_idioma_id` ON `teclados` (`idioma_id`)[0m
+  [1m[35m (49.9ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723141051')
+Migrating to CreateTeclas (20120723145538)
+  [1m[36m (125.0ms)[0m  [1mCREATE TABLE `teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `teclado_id` int(11), `categoria_tecla_id` int(11), `nome` varchar(255) NOT NULL, `descricao` text NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (142.1ms)[0m  CREATE INDEX `index_teclas_on_teclado_id` ON `teclas` (`teclado_id`)
+  [1m[36m (133.2ms)[0m  [1mCREATE INDEX `index_teclas_on_categoria_tecla_id` ON `teclas` (`categoria_tecla_id`)[0m
+  [1m[35m (34.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723145538')
+Migrating to CreateCaracteres (20120723150843)
+  [1m[36m (116.5ms)[0m  [1mCREATE TABLE `caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tecla_id` int(11), `posicao_caractere_id` int(11), `simbolo` varchar(255) NOT NULL, `descricao` text, `codigo_html` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (433.2ms)[0m  CREATE INDEX `index_caracteres_on_tecla_id` ON `caracteres` (`tecla_id`)
+  [1m[36m (753.1ms)[0m  [1mCREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)[0m
+  [1m[35m (91.5ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (215.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (217.6ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+  [1m[35m (79.4ms)[0m  CREATE TABLE `posicao_caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `posicao` varchar(10) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120720200333')[0m
+Migrating to CreateCategoriaTeclas (20120723125705)
+  [1m[35m (74.5ms)[0m  CREATE TABLE `categoria_teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(25) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (33.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723125705')[0m
+Migrating to CreateIdiomas (20120723134402)
+  [1m[35m (74.4ms)[0m  CREATE TABLE `idiomas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sigla` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, `nome_nativo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (32.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723134402')[0m
+Migrating to CreateTeclados (20120723141051)
+  [1m[35m (107.9ms)[0m  CREATE TABLE `teclados` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `idioma_id` int(11), `padrao` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (311.8ms)[0m  [1mCREATE INDEX `index_teclados_on_idioma_id` ON `teclados` (`idioma_id`)[0m
+  [1m[35m (65.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723141051')
+Migrating to CreateTeclas (20120723145538)
+  [1m[36m (458.9ms)[0m  [1mCREATE TABLE `teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `teclado_id` int(11), `categoria_tecla_id` int(11), `nome` varchar(255) NOT NULL, `descricao` text NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (275.5ms)[0m  CREATE INDEX `index_teclas_on_teclado_id` ON `teclas` (`teclado_id`)
+  [1m[36m (323.0ms)[0m  [1mCREATE INDEX `index_teclas_on_categoria_tecla_id` ON `teclas` (`categoria_tecla_id`)[0m
+  [1m[35m (53.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723145538')
+Migrating to CreateCaracteres (20120723150843)
+  [1m[36m (174.2ms)[0m  [1mCREATE TABLE `caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tecla_id` int(11), `posicao_caractere_id` int(11), `nome` varchar(255), `simbolo` varchar(255) NOT NULL, `descricao` text, `codigo_html` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (328.0ms)[0m  CREATE INDEX `index_caracteres_on_tecla_id` ON `caracteres` (`tecla_id`)
+  [1m[36m (200.9ms)[0m  [1mCREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)[0m
+  [1m[35m (66.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (168.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (305.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+  [1m[35m (214.4ms)[0m  CREATE TABLE `posicao_caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `posicao` varchar(10) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (58.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120720200333')[0m
+Migrating to CreateCategoriaTeclas (20120723125705)
+  [1m[35m (98.8ms)[0m  CREATE TABLE `categoria_teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(25) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (83.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723125705')[0m
+Migrating to CreateIdiomas (20120723134402)
+  [1m[35m (208.7ms)[0m  CREATE TABLE `idiomas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sigla` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, `nome_nativo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (103.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723134402')[0m
+Migrating to CreateTeclados (20120723141051)
+  [1m[35m (197.8ms)[0m  CREATE TABLE `teclados` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `idioma_id` int(11), `padrao` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (309.4ms)[0m  [1mCREATE INDEX `index_teclados_on_idioma_id` ON `teclados` (`idioma_id`)[0m
+  [1m[35m (83.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723141051')
+Migrating to CreateTeclas (20120723145538)
+  [1m[36m (207.8ms)[0m  [1mCREATE TABLE `teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `teclado_id` int(11), `categoria_tecla_id` int(11), `nome` varchar(255) NOT NULL, `descricao` text NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (242.9ms)[0m  CREATE INDEX `index_teclas_on_teclado_id` ON `teclas` (`teclado_id`)
+  [1m[36m (150.0ms)[0m  [1mCREATE INDEX `index_teclas_on_categoria_tecla_id` ON `teclas` (`categoria_tecla_id`)[0m
+  [1m[35m (41.7ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723145538')
+Migrating to CreateCaracteres (20120723150843)
+  [1m[36m (100.2ms)[0m  [1mCREATE TABLE `caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tecla_id` int(11), `posicao_caractere_id` int(11), `nome` varchar(255), `simbolo` varchar(255) NOT NULL, `descricao` text, `codigo_html` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (300.5ms)[0m  CREATE INDEX `index_caracteres_on_tecla_id` ON `caracteres` (`tecla_id`)
+  [1m[36m (309.9ms)[0m  [1mCREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)[0m
+  [1m[35m (107.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (181.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (291.0ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+  [1m[35m (87.2ms)[0m  CREATE TABLE `posicao_caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `posicao` varchar(10) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120720200333')[0m
+Migrating to CreateCategoriaTeclas (20120723125705)
+  [1m[35m (91.2ms)[0m  CREATE TABLE `categoria_teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(25) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (40.9ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723125705')[0m
+Migrating to CreateIdiomas (20120723134402)
+  [1m[35m (99.7ms)[0m  CREATE TABLE `idiomas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sigla` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, `nome_nativo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.2ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723134402')[0m
+Migrating to CreateTeclados (20120723141051)
+  [1m[35m (99.3ms)[0m  CREATE TABLE `teclados` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `idioma_id` int(11), `padrao` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (167.3ms)[0m  [1mCREATE INDEX `index_teclados_on_idioma_id` ON `teclados` (`idioma_id`)[0m
+  [1m[35m (59.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723141051')
+Migrating to CreateTeclas (20120723145538)
+  [1m[36m (99.5ms)[0m  [1mCREATE TABLE `teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `teclado_id` int(11), `categoria_tecla_id` int(11), `nome` varchar(255) NOT NULL, `descricao` text NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (167.1ms)[0m  CREATE INDEX `index_teclas_on_teclado_id` ON `teclas` (`teclado_id`)
+  [1m[36m (167.1ms)[0m  [1mCREATE INDEX `index_teclas_on_categoria_tecla_id` ON `teclas` (`categoria_tecla_id`)[0m
+  [1m[35m (41.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723145538')
+Migrating to CreateCaracteres (20120723150843)
+  [1m[36m (192.1ms)[0m  [1mCREATE TABLE `caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tecla_id` int(11), `posicao_caractere_id` int(11), `nome` varchar(255), `simbolo` varchar(255) NOT NULL, `descricao` text, `codigo_html` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (359.4ms)[0m  CREATE INDEX `index_caracteres_on_tecla_id` ON `caracteres` (`tecla_id`)
+  [1m[36m (385.9ms)[0m  [1mCREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)[0m
+  [1m[35m (50.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (168.7ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (263.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+  [1m[35m (104.7ms)[0m  CREATE TABLE `posicao_caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `posicao` varchar(10) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120720200333')[0m
+Migrating to CreateCategoriaTeclas (20120723125705)
+  [1m[35m (74.0ms)[0m  CREATE TABLE `categoria_teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(25) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723125705')[0m
+Migrating to CreateIdiomas (20120723134402)
+  [1m[35m (82.1ms)[0m  CREATE TABLE `idiomas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sigla` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, `nome_nativo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723134402')[0m
+Migrating to CreateTeclados (20120723141051)
+  [1m[35m (90.8ms)[0m  CREATE TABLE `teclados` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `idioma_id` int(11), `padrao` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (150.2ms)[0m  [1mCREATE INDEX `index_teclados_on_idioma_id` ON `teclados` (`idioma_id`)[0m
+  [1m[35m (33.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723141051')
+Migrating to CreateTeclas (20120723145538)
+  [1m[36m (74.1ms)[0m  [1mCREATE TABLE `teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `teclado_id` int(11), `categoria_tecla_id` int(11), `nome` varchar(255) NOT NULL, `descricao` text NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (142.0ms)[0m  CREATE INDEX `index_teclas_on_teclado_id` ON `teclas` (`teclado_id`)
+  [1m[36m (125.0ms)[0m  [1mCREATE INDEX `index_teclas_on_categoria_tecla_id` ON `teclas` (`categoria_tecla_id`)[0m
+  [1m[35m (66.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723145538')
+Migrating to CreateCaracteres (20120723150843)
+  [1m[36m (109.2ms)[0m  [1mCREATE TABLE `caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tecla_id` int(11), `posicao_caractere_id` int(11), `nome` varchar(255), `simbolo` varchar(255) NOT NULL, `descricao` text, `codigo_html` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (149.8ms)[0m  CREATE INDEX `index_caracteres_on_tecla_id` ON `caracteres` (`tecla_id`)
+  [1m[36m (176.9ms)[0m  [1mCREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)[0m
+  [1m[35m (57.0ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (195.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (277.8ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+  [1m[35m (96.5ms)[0m  CREATE TABLE `posicao_caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `posicao` varchar(10) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (49.6ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120720200333')[0m
+Migrating to CreateCategoriaTeclas (20120723125705)
+  [1m[35m (121.3ms)[0m  CREATE TABLE `categoria_teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(25) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (78.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723125705')[0m
+Migrating to CreateIdiomas (20120723134402)
+  [1m[35m (124.5ms)[0m  CREATE TABLE `idiomas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sigla` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, `nome_nativo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (41.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723134402')[0m
+Migrating to CreateTeclados (20120723141051)
+  [1m[35m (65.3ms)[0m  CREATE TABLE `teclados` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `idioma_id` int(11), `padrao` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (134.7ms)[0m  [1mCREATE INDEX `index_teclados_on_idioma_id` ON `teclados` (`idioma_id`)[0m
+  [1m[35m (33.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723141051')
+Migrating to CreateTeclas (20120723145538)
+  [1m[36m (82.5ms)[0m  [1mCREATE TABLE `teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `teclado_id` int(11), `categoria_tecla_id` int(11), `nome` varchar(255) NOT NULL, `descricao` text NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (149.9ms)[0m  CREATE INDEX `index_teclas_on_teclado_id` ON `teclas` (`teclado_id`)
+  [1m[36m (150.4ms)[0m  [1mCREATE INDEX `index_teclas_on_categoria_tecla_id` ON `teclas` (`categoria_tecla_id`)[0m
+  [1m[35m (41.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723145538')
+Migrating to CreateCaracteres (20120723150843)
+  [1m[36m (82.6ms)[0m  [1mCREATE TABLE `caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tecla_id` int(11), `posicao_caractere_id` int(11), `nome` varchar(255), `simbolo` varchar(255) NOT NULL, `descricao` text, `codigo_html` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (225.5ms)[0m  CREATE INDEX `index_caracteres_on_tecla_id` ON `caracteres` (`tecla_id`)
+  [1m[36m (319.7ms)[0m  [1mCREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)[0m
+  [1m[35m (83.1ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml
+  [1m[36m (238.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (401.5ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.1ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreatePosicaoCaracteres (20120720200333)
+  [1m[35m (105.8ms)[0m  CREATE TABLE `posicao_caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `posicao` varchar(10) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (50.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120720200333')[0m
+Migrating to CreateCategoriaTeclas (20120723125705)
+  [1m[35m (91.1ms)[0m  CREATE TABLE `categoria_teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `nome` varchar(25) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (55.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723125705')[0m
+Migrating to CreateIdiomas (20120723134402)
+  [1m[35m (194.6ms)[0m  CREATE TABLE `idiomas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `sigla` varchar(2) NOT NULL, `nome` varchar(255) NOT NULL, `nome_nativo` varchar(255) NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (66.5ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20120723134402')[0m
+Migrating to CreateTeclados (20120723141051)
+  [1m[35m (174.2ms)[0m  CREATE TABLE `teclados` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `idioma_id` int(11), `padrao` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (293.5ms)[0m  [1mCREATE INDEX `index_teclados_on_idioma_id` ON `teclados` (`idioma_id`)[0m
+  [1m[35m (83.2ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723141051')
+Migrating to CreateTeclas (20120723145538)
+  [1m[36m (199.6ms)[0m  [1mCREATE TABLE `teclas` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `teclado_id` int(11), `categoria_tecla_id` int(11), `nome` varchar(255) NOT NULL, `descricao` text NOT NULL, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (310.9ms)[0m  CREATE INDEX `index_teclas_on_teclado_id` ON `teclas` (`teclado_id`)
+  [1m[36m (263.9ms)[0m  [1mCREATE INDEX `index_teclas_on_categoria_tecla_id` ON `teclas` (`categoria_tecla_id`)[0m
+  [1m[35m (53.8ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723145538')
+Migrating to CreateCaracteres (20120723150843)
+  [1m[36m (174.5ms)[0m  [1mCREATE TABLE `caracteres` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `tecla_id` int(11), `posicao_caractere_id` int(11), `nome` varchar(255), `simbolo` varchar(255) NOT NULL, `descricao` text, `codigo_html` text, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (209.0ms)[0m  CREATE INDEX `index_caracteres_on_tecla_id` ON `caracteres` (`tecla_id`)
+  [1m[36m (134.7ms)[0m  [1mCREATE INDEX `index_caracteres_on_posicao_caractere_id` ON `caracteres` (`posicao_caractere_id`)[0m
+  [1m[35m (49.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20120723150843')
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Connecting to database specified by database.yml

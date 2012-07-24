@@ -16,8 +16,10 @@ ActiveRecord::Schema.define(:version => 20120723150843) do
   create_table "caracteres", :force => true do |t|
     t.integer  "tecla_id"
     t.integer  "posicao_caractere_id"
+    t.string   "nome"
     t.string   "simbolo",              :null => false
-    t.string   "descricao"
+    t.text     "descricao"
+    t.text     "codigo_html"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
   end
