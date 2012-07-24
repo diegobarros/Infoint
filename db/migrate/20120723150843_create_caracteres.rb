@@ -4,6 +4,7 @@ class CreateCaracteres < ActiveRecord::Migration
       t.references :tecla
       t.references :posicao_caractere
       t.string :simbolo, :null => false
+      t.text :descricao, :null => true
 
       t.timestamps
     end

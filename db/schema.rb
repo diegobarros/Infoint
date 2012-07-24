@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20120723150843) do
     t.integer  "tecla_id"
     t.integer  "posicao_caractere_id"
     t.string   "simbolo",              :null => false
+    t.string   "descricao"
     t.datetime "created_at",           :null => false
     t.datetime "updated_at",           :null => false
   end
