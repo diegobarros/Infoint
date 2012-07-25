@@ -3,8 +3,26 @@
 	<div id="teclado">
 		
 		<div id="categoria-teclas-funcao">
-			
-			
+			<ul>
+				<% @teclado.teclas.each do |tecla| %>
+					<% if tecla.categoria_tecla.id == 1 %>
+					
+						<li>
+							<% if tecla.id != 14 && tecla.id != 15 && tecla.id != 16 then %>
+								<a href="#" class="tecla tecla-de-funcao">
+									<%=content_tag(:span, tecla.nome) %>
+								</a>
+							
+							<%else%>
+								<a href="#" class="tecla">
+									<%=content_tag(:span, tecla.nome) %>
+								</a>
+							<%end%>	
+						</li>
+
+					<%end%>
+				<%end%>
+			</ul>
 		</div>
 		
 		<div id="categoria-teclas-digitacao">
