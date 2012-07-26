@@ -274,3 +274,38 @@ tecla:active,
 }
 
 
+////////////////////////
+//DESCRIÇÃO DAS TECLAS//
+////////////////////////
+
+
+#container-descricao-teclado {
+  height: 300px;
+  margin: 0 auto 10px auto;
+  padding: 20px;
+  border: 1px solid black;
+}
+
+#painel-descricao-teclado {
+  margin:0 auto;
+  width:800px;
+  height:300px;
+  border: 1px solid black;
+}
+
+#painel-descricao-teclado aside {
+  border: 1px solid black;
+  width:170px;
+  height:280px;
+  padding:10px;
+  float:left;
+}
+
+#painel-descricao-teclado article {
+  width:610px;
+  height:300px;
+  margin-left:190px;
+  border: 1px solid black;
+}
+
+
