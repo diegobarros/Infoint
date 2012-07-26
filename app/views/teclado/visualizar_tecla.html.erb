@@ -2,12 +2,28 @@
 	<div id="painel-descricao-teclado">
 		<aside>
 			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 		</aside>
 		<article>
 			<header>
 				<h3><%= @tecla.nome %></h3>
 			</header>
-			<p></p>
+			
+			
+			
+			
+			
+			
+			
+			<p><%= @tecla.descricao %></p>
 		</article>
 	</div>
 </div>
@@ -25,7 +41,7 @@
 							<% if tecla.id != 14 && tecla.id != 15 && tecla.id != 16 then %>
 								
 								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla tecla-de-funcao" do %>
-									<%=content_tag(:span, tecla.nome, :id => tecla.id) %>
+									<%=content_tag(:span, tecla.nome) %>
 								<%end%>
 								
 								<!--
@@ -34,9 +50,9 @@
 								</a>-->
 							
 							<%else%>
-								<a href="#" class="tecla">
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
 									<%=content_tag(:span, tecla.nome) %>
-								</a>
+								<%end%>
 							<%end%>	
 						</li>
 

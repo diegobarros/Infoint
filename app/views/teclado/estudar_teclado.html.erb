@@ -35,9 +35,9 @@
 								</a>-->
 							
 							<%else%>
-								<a href="#" class="tecla">
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
 									<%=content_tag(:span, tecla.nome) %>
-								</a>
+								<%end%>
 							<%end%>	
 						</li>
 
