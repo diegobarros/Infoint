@@ -1,29 +1,43 @@
 <div id="container-descricao-teclado">
 	<div id="painel-descricao-teclado">
-		<aside>
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		</aside>
-		<article>
+					
 			<header>
 				<h3><%= @tecla.nome %></h3>
 			</header>
+		<aside>
+			<ul>
+				<% for i in 0..@tecla.caracteres.length-1 do %>
+				
+					<% if i != 0 %>
+						<li><%=content_tag(:a, @tecla.caracteres[i].simbolo , :href => "#painel-caractere-" + (i+1).to_s)  %></li>
+					<% else %>
+						<li><%=content_tag(:a, @tecla.caracteres[i].simbolo , :href => "#painel-caractere-" + (i+1).to_s, :class => "painel-caractere-ativo")  %></li>
+					<% end %>			
+					
+				<% end %>
+			</ul>
+		</aside>
+		
+		<article >
+
 			
+			<div class="mascara">
+				<div id="container-descricao-tecla" >
+					
+					<% for i in 0..@tecla.caracteres.length-1 do %>
+						<%= content_tag(:div, :id => "painel-caractere-" + (i+1).to_s, :class => "painel-caractere") do %>
+						
+							<h3><%= @tecla.caracteres[i].simbolo%></h3>
+							<p><%= @tecla.caracteres[i].descricao%></p>
+						<%end%>
+							
+							
+					<% end %>
+					
+				</div>
+				
+			</div>
 			
-			
-			
-			
-			
-			
-			<p><%= @tecla.descricao %></p>
 		</article>
 	</div>
 </div>
@@ -44,11 +58,6 @@
 									<%=content_tag(:span, tecla.nome) %>
 								<%end%>
 								
-								<!--
-								<a href="#" class="tecla tecla-de-funcao">
-									<%=content_tag(:span, tecla.nome) %>
-								</a>-->
-							
 							<%else%>
 								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
 									<%=content_tag(:span, tecla.nome) %>
@@ -61,6 +70,33 @@
 			</ul>
 		</div>
 		<div id="categoria-teclas-digitacao">
+			<ul>
+				<% @teclado.teclas.each do |tecla| %>
+					<% if tecla.categoria_tecla.id == 2 %>
+					
+						<li>
+							<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
+							
+								<% tecla.caracteres.each do |caractere| %>
+									
+									<% if caractere.posicao_caractere.id == 2 %>
+										<%=content_tag(:span, caractere.simbolo, :class => "caractere-superior" ) %>
+									<% elsif caractere.posicao_caractere.id == 3 %>
+										<%=content_tag(:span, caractere.simbolo, :class => "caractere-esquerdo" ) %>
+									<% elsif caractere.posicao_caractere.id == 4 %>
+										<%=content_tag(:span, caractere.simbolo, :class => "caractere-direito" ) %>
+									<% else %>
+										<%=content_tag(:span, caractere.simbolo) %>
+									<% end %>
+								
+								<% end %>
+
+							<%end%>
+						</li>
+
+					<%end%>
+				<%end%>
+			</ul>
 			
 		</div>
 		

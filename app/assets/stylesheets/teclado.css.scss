@@ -2,19 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-ul li{
-  display:inline-block;
-}
 
-li { float: left; }
-
-ul ol { list-style-type: none; }
 
 // CATEGORIAS DE TECLAS
 
 #container-teclado {
   padding: 5px;
-    border: 1px solid black;
+  border: 1px solid black;
   height: 350px;
   margin: 0 auto;
 }
@@ -111,6 +105,14 @@ ul ol { list-style-type: none; }
   margin:0 auto;
   position:relative;
 }
+
+#teclado ul li{
+  display:inline-block;
+}
+
+#teclado li { float: left; }
+
+#teclado ul ol { list-style-type: none; }
 
 .tecla {
   display: block;
@@ -280,32 +282,108 @@ tecla:active,
 
 
 #container-descricao-teclado {
-  height: 300px;
-  margin: 0 auto 10px auto;
+  height: 350px;
+  margin: 0 auto 30px auto;
   padding: 20px;
   border: 1px solid black;
 }
 
 #painel-descricao-teclado {
   margin:0 auto;
-  width:800px;
-  height:300px;
-  border: 1px solid black;
+  width:765px;
+  height:360px;
+  border: 1px solid #dedede;
+  border-radius:10px;
+  
+   border-left: 1px solid #DDDDDD;
+  border-right: 1px solid #DDDDDD;
+  background-color:#FFFFFF;
+  box-shadow: 0 10px 16px #AAAAAA;
 }
 
 #painel-descricao-teclado aside {
-  border: 1px solid black;
-  width:170px;
-  height:280px;
-  padding:10px;
+
+  width:105px;
+  height:290px;
+  padding:15px 10px 0  10px;
   float:left;
 }
 
 #painel-descricao-teclado article {
-  width:610px;
-  height:300px;
-  margin-left:190px;
-  border: 1px solid black;
+  width:640px;
+  height:305px;
+  margin-left:125px;
+}
+
+#painel-descricao-teclado header {
+  border:none;
+  background-color:blue;
+  height:25px;
+  padding:10px 20px;
+  color:#FFF;
+  border-radius:10px 10px 0px 0px;
+}
+
+#painel-descricao-teclado  header h3 {
+  font-size: 16pt;
+}
+
+#painel-descricao-teclado aside ul {
+    border-right:1px solid #dedede;
+    list-style:none; 
+    float:left; 
+      padding: 0 20px 15px 10px;
+    height:275px;
+}
+
+#painel-descricao-teclado aside ul li { margin: 10px 0; }
+#painel-descricao-teclado aside ul a {
+    outline:none; 
+    text-decoration: underline;
+    text-align: center;
+    display:block;
+    width:75px; 
+    height:74px;
+    border: solid 1px #EFEFEF;
+    border: solid 1px #CCC;
+    border: solid 4px white;
+    box-shadow: 1px 1px 5px #999;
+    
+    border-radius: 4px;
+}
+
+#painel-descricao-teclado aside ul li a {
+  font-size:16pt;
+  text-decoration:none;
+  color:black;
+  background: #fcfcfc; 
+  background: linear-gradient(top, #fcfcfc 0%,#dad8d8 100%); 
+  background: -moz-linear-gradient(top, #fcfcfc 0%, #dad8d8 100%); 
+  background: -webkit-linear-gradient(top, #fcfcfc 0%,#dad8d8 100%);
+ }
+ 
+ #painel-descricao-teclado article .mascara {
+    float:left; 
+    width:620px; 
+    height:220px; 
+    margin:15px 0 0 10px; 
+    overflow:hidden;
+ }
+
+#painel-descricao-teclado article .painel-caractere {
+    height: 280px;
+    text-align: left;
+    width: 600px;
+ }
+
+
+#container-descricao-tecla {
+  padding:8px;
+}
+
+#container-descricao-tecla h3 {
+  font-size: 14pt;
+  marging-bottom: 20px;
 }
 
 

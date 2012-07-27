@@ -28,12 +28,6 @@
 								<%= link_to teclado_visualizar_tecla_path(tecla), :class => "tecla tecla-de-funcao" do %>
 									<%=content_tag(:span, tecla.nome, :id => tecla.id) %>
 								<%end%>
-								
-								<!--
-								<a href="#" class="tecla tecla-de-funcao">
-									<%=content_tag(:span, tecla.nome) %>
-								</a>-->
-							
 							<%else%>
 								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
 									<%=content_tag(:span, tecla.nome) %>
