@@ -8,7 +8,6 @@
 
 #container-teclado {
   padding: 5px;
-  border: 1px solid black;
   height: 350px;
   margin: 0 auto;
 }
@@ -147,7 +146,7 @@
   
 }
 
-tecla:active,
+.tecla:active,
 .tecla-abaixada {
   color: #888;
   background: #ebeced;
@@ -283,9 +282,8 @@ tecla:active,
 
 #container-descricao-teclado {
   height: 350px;
-  margin: 0 auto 30px auto;
+  margin: 40px auto 40px auto;
   padding: 20px;
-  border: 1px solid black;
 }
 
 #painel-descricao-teclado {
@@ -298,11 +296,10 @@ tecla:active,
    border-left: 1px solid #DDDDDD;
   border-right: 1px solid #DDDDDD;
   background-color:#FFFFFF;
-  box-shadow: 0 10px 16px #AAAAAA;
+  box-shadow: 0 5px 10px #AAAAAA;
 }
 
 #painel-descricao-teclado aside {
-
   width:105px;
   height:290px;
   padding:15px 10px 0  10px;
@@ -332,7 +329,7 @@ tecla:active,
     border-right:1px solid #dedede;
     list-style:none; 
     float:left; 
-      padding: 0 20px 15px 10px;
+    padding: 0 20px 15px 10px;
     height:275px;
 }
 
@@ -387,7 +384,7 @@ tecla:active,
 }
 
 #container-descricao-tecla header {
-   border-bottom: 1px solid #C9C0BB;
+  border-bottom: 1px solid #C9C0BB;
   background:none;
   color:black;
   padding:5px 0;

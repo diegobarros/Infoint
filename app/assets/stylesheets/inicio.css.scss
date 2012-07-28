@@ -1,3 +1,33 @@
 // Place all the styles related to the Inicio controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#cabecalho {
+  margin: 0;
+  padding:5px;
+  height: 30px;
+  
+  background: #fcfcfc; 
+  background: linear-gradient(top, #fcfcfc 0%,#dad8d8 100%); 
+  background: -moz-linear-gradient(top, #fcfcfc 0%, #dad8d8 100%); 
+  background: -webkit-linear-gradient(top, #fcfcfc 0%,#dad8d8 100%);
+}
+
+#logo-pequeno {
+  width: 100px;
+  padding-top: 5px;
+}
+
+#logo-pequeno a {
+  color:black;
+}
+
+#logo-pequeno a:hover {
+  text-decoration:none;
+}
+
+#logo-pequeno h1 {
+  font-size: 14pt;
+  font-family: 'Orbitron', sans-serif;
+  color:#333;
+  text-shadow: 1px 1px 1px #FFFFFF;
+}
