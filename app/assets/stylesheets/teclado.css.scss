@@ -293,11 +293,12 @@
   border: 1px solid #dedede;
   border-radius:10px;
   
-   border-left: 1px solid #DDDDDD;
+  border-left: 1px solid #DDDDDD;
   border-right: 1px solid #DDDDDD;
   background-color:#FFFFFF;
   box-shadow: 0 5px 10px #AAAAAA;
 }
+
 
 #painel-descricao-teclado aside {
   width:105px;
@@ -307,14 +308,12 @@
 }
 
 #painel-descricao-teclado article {
-  width:640px;
   height:305px;
-  margin-left:125px;
+  margin-left:0px;
 }
 
 #painel-descricao-teclado header {
   border:none;
-  background-color:blue;
   height:25px;
   padding:10px 20px;
   color:#FFF;
