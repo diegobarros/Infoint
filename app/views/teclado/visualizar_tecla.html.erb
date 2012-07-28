@@ -27,7 +27,7 @@
 					<% for i in 0..@tecla.caracteres.length-1 do %>
 						<%= content_tag(:div, :id => "painel-caractere-" + (i+1).to_s, :class => "painel-caractere") do %>
 						
-							<h3><%= @tecla.caracteres[i].simbolo%></h3>
+							<header><h3><%= @tecla.caracteres[i].simbolo%></h3></header>
 							<p><%= @tecla.caracteres[i].descricao%></p>
 						<%end%>
 							

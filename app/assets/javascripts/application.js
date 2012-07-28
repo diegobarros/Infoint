@@ -13,4 +13,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.scrollTo-1.4.2-min.js
+//= require jquery.transit.min.js
 //= require_tree .
