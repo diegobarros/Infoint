@@ -1,4 +1,8 @@
 Infoint::Application.routes.draw do
+  get "controle_interface/index"
+
+  get "controle_interface/estudar_controle_interface"
+
   get "inicio/index"
 
   get "teclado/index"

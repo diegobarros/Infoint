@@ -30,9 +30,10 @@
 						<li>
 							<% if tecla.id != 14 && tecla.id != 15 && tecla.id != 16 then %>
 								
-								<%= link_to teclado_visualizar_tecla_path(tecla), :class => "tecla tecla-de-funcao" do %>
-									<%=content_tag(:span, tecla.nome, :id => tecla.id) %>
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla tecla-de-funcao" do %>
+									<%=content_tag(:span, tecla.nome) %>
 								<%end%>
+								
 							<%else%>
 								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
 									<%=content_tag(:span, tecla.nome) %>
@@ -46,6 +47,33 @@
 		</div>
 		
 		<div id="categoria-teclas-digitacao">
+			<ul>
+				<% @teclado.teclas.each do |tecla| %>
+					<% if tecla.categoria_tecla.id == 2 %>
+					
+						<li>
+							<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
+							
+								<% tecla.caracteres.each do |caractere| %>
+									
+									<% if caractere.posicao_caractere.id == 2 %>
+										<%=content_tag(:span, caractere.simbolo, :class => "caractere-superior" ) %>
+									<% elsif caractere.posicao_caractere.id == 3 %>
+										<%=content_tag(:span, caractere.simbolo, :class => "caractere-esquerdo" ) %>
+									<% elsif caractere.posicao_caractere.id == 4 %>
+										<%=content_tag(:span, caractere.simbolo, :class => "caractere-direito" ) %>
+									<% else %>
+										<%=content_tag(:span, caractere.simbolo) %>
+									<% end %>
+								
+								<% end %>
+
+							<%end%>
+						</li>
+
+					<%end%>
+				<%end%>
+			</ul>
 			
 		</div>
 		
