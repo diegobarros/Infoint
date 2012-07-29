@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120723150843) do
+ActiveRecord::Schema.define(:version => 20120729225316) do
 
   create_table "caracteres", :force => true do |t|
     t.integer  "tecla_id"
@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(:version => 20120723150843) do
     t.datetime "updated_at",               :null => false
   end
 
+  create_table "controle_interfaces", :force => true do |t|
+    t.string   "nome"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "idiomas", :force => true do |t|
     t.string   "sigla",       :limit => 2, :null => false
     t.string   "nome",                     :null => false
@@ -40,6 +46,15 @@ ActiveRecord::Schema.define(:version => 20120723150843) do
     t.datetime "created_at",               :null => false
     t.datetime "updated_at",               :null => false
   end
+
+  create_table "instrucao_usos", :force => true do |t|
+    t.integer  "controle_interface_id"
+    t.text     "instrucao"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  add_index "instrucao_usos", ["controle_interface_id"], :name => "index_instrucao_usos_on_controle_interface_id"
 
   create_table "posicao_caracteres", :force => true do |t|
     t.string   "posicao",    :limit => 10, :null => false
