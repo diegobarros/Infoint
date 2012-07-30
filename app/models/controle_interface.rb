@@ -1,3 +1,5 @@
 class ControleInterface < ActiveRecord::Base
-  attr_accessible :nome
+  has_many :instrucao_usos
+  attr_accessible :nome, :instrucao_usos_attributes
+  accepts_nested_attributes_for :instrucao_usos
 end

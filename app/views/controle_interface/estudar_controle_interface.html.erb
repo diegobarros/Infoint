@@ -9,7 +9,7 @@
 	<section class="container-artigos">
 		<article>
 			<header class="azul">
-				<h2>Controles de Interfaces</h2>
+				<h2>Controles de Interfaces - Checkboxes</h2>
 			</header>
 			<div>
 				
@@ -17,17 +17,31 @@
 					
 				</div>
 				<div class="painel-descricao-padrao-interface ">
-					
+					<p>Note que:</p>
+					<ol>
+						<% @controles_interfaces.each do |controles| %>
+							
+							<% if controles.id == 1 %>
+							
+								<% controles.instrucao_usos.each do |instrucao_uso| %>
+									<%=content_tag(:li, instrucao_uso.instrucao )%>
+								<% end %>
+								
+							<%end%>
+							
+						<%end%>
+					</ol>
 				</div>
 
 			</div>
 			<footer>
-				
+				<p>Para ir para a próxma página, marque o Checkbox</p>
+				<a href="#ar">slide1</a>
 			</footer>
 			
 		</article>
 		
-		<article>
+		<article id="ar">
 			<header class="azul">
 				
 			</header>

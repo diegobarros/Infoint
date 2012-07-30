@@ -2,7 +2,7 @@ class CreateInstrucaoUsos < ActiveRecord::Migration
   def change
     create_table :instrucao_usos do |t|
       t.references :controle_interface
-      t.text :instrucao
+      t.text :instrucao, :null => false
 
       t.timestamps
     end

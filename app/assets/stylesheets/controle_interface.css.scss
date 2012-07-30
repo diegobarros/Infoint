@@ -14,17 +14,19 @@
 }
 
 .container-artigos article {
-  margin-bottom: 32px;
+  margin-bottom: 30px;
   border: 1px solid #C9C0BB;
 }
 
 .container-artigos article header {
-  border: 1px solid #C9C0BB;
+  padding: 15px;
+  height: 30px;
+  color: white;
 }
 
 .container-artigos article div {
   padding: 20px;
-  height: 450px;
+  height: 440px;
   border: 1px solid #C9C0BB;
 }
 
@@ -34,6 +36,8 @@
   border: 1px solid #C9C0BB;
 }
 
+.painel-descricao-padrao-interface ol { margin: 25px 0 0 20px ; }
+.painel-descricao-padrao-interface ol li { margin-bottom: 20px; }
 
 .container-artigos article footer {
   margin:0;
