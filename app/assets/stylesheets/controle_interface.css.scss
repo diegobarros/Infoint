@@ -14,7 +14,8 @@
 }
 
 .container-artigos article {
-  margin-bottom: 30px;
+  height: 597px;
+  margin-bottom: 60px;
   border: 1px solid #C9C0BB;
 }
 
@@ -25,15 +26,21 @@
 }
 
 .container-artigos article div {
-  padding: 20px;
-  height: 440px;
+  padding: 10px;
+  height: 462px;
   border: 1px solid #C9C0BB;
 }
 
 .painel-descricao-padrao-interface {
-  width: 417px;
+  width: 447px;
   float: left;
   border: 1px solid #C9C0BB;
+}
+
+
+.moldura {
+  height: 600px;
+  overflow:hidden;
 }
 
 .painel-descricao-padrao-interface ol { margin: 25px 0 0 20px ; }
@@ -42,7 +49,58 @@
 .container-artigos article footer {
   margin:0;
   box-shadow:none;
-  padding: 10px;
-  height: 30px;
+  padding: 15px;
+  height: 18px;
   border: 1px solid #C9C0BB;
 }
+
+.container-artigos article footer ul li {
+  display:inline-block;
+  margin-right: 8px;
+}
+
+.container-artigos article footer ul li:last-child {
+  margin-left: 375px;
+}
+
+#demonstracao-controle-interface {
+  padding: 0;
+  height:90px;
+}
+
+#demonstracao-controle-interface ul { margin-top: 30px; }
+#demonstracao-controle-interface ul li {
+  margin-right: 20px;
+  display:inline-block;
+}
+
+#padrao-radio-button  footer ul li:last-child {
+  margin-left: 340px;
+}
+
+
+
+
+
+
+.container-artigos article footer a {
+  visibility: hidden;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

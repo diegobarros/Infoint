@@ -98,3 +98,53 @@
     font-size: 16pt;
     font-weight: 300;
 }
+
+
+/*
+ * Botões
+ */
+
+.botao {
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: .5em 1em .55em;
+  text-shadow: 0 1px 1px rgba(0,0,0,.3);
+  -webkit-border-radius: .5em; 
+  -moz-border-radius: .5em;
+  border-radius: .5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  -moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+  box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.botao:hover {
+  text-decoration: none;
+}
+.botao:active {
+  position: relative;
+  top: 1px;
+}
+
+
+.botao-azul {
+  color: #D9EEF7;
+  border: 1px solid #0076A3;
+  background: #00ADEE;
+  background: -webkit-gradient(linear, left top, left bottom, from(#00ADEE), to(#0078A5));
+  background: -moz-linear-gradient(top,  #00ADEE,  #0078A5);
+}
+
+.botao-azul:hover {
+  background: #f47c20;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0095CC), to(#00678E));
+  background: -moz-linear-gradient(top,  #0095CC,  #00678E);
+}
+
+.botao-azul:active {
+  color: #80BED6;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0078A5), to(#00ADEE));
+  background: -moz-linear-gradient(top,  #0078A5,  #00ADEE);
+}
