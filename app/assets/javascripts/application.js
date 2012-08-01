@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require jquery.scrollTo-1.4.2-min.js
 //= require jquery.transit.min.js
+//= require fancybox/jquery.fancybox.js
+//= require fancybox/jquery.fancybox.pack.js
 //= require_tree .

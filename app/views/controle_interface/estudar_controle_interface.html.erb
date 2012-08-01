@@ -5,14 +5,19 @@
 		<% end %>
 	</div>
 </header>
-<div id="container">
+<div id="container" >
 	<section class="container-artigos">
+		
+		
+		
 		<div class="moldura">
+		
+			
 			<article id="padrao-checkbox">
 				<header class="azul">
 					<h2>Controles de Interfaces - Checkboxes</h2>
 				</header>
-				<div >
+				<div id="conteudo-artigos-padrao-interface" >
 				
 					<div class="painel-descricao-padrao-interface ">
 						<div id="demonstracao-controle-interface">
@@ -69,14 +74,12 @@
 			</article>
 		
 			<!-- Padrão Radio Button -->
-		
-		
-		
+
 			<article id="padrao-radio-button">
 				<header class="azul">
 					<h2>Controles de Interfaces - Radio Button</h2>
 				</header>
-				<div>
+				<div id="conteudo-artigos-padrao-interface">
 					
 					<div class="painel-descricao-padrao-interface ">
 						<div id="demonstracao-controle-interface">
@@ -134,29 +137,47 @@
 			
 			</article>
 		
+
+			
 			<!-- Padrão Dropdown -->
 				
 			<article id="padrao-drop-down">
 				<header class="azul">
 					<h2>Controles de Interfaces - Dropdown</h2>
 				</header>
-				<div>
+				<div id="conteudo-artigos-padrao-interface">
 				
 					<div class="painel-descricao-padrao-interface ">
 						<div id="demonstracao-controle-interface">
 							<p>Os quadrados abaixo são chamados de <b>Dropdown</b></p>
 							<ul>
 								<li>
-									<input name="exemplo-radio-button" type="radio" checked="true" />
-									<label>Radio Button 1</label>
+									<label>Números</label>
+									<select>
+										<% (0..9).to_a.each do |numero| %>
+											<option><%= numero %></option>
+										<%end%>
+									</select>
 								</li>
 								<li>
-									<input name="exemplo-radio-button" type="radio" />
-									<label>Radio Button 2</label>
+									<label>Alfabeto</label>
+									<select>
+										<% ('A'..'Z').to_a.each do |letra|%>
+											<option><%= letra %></option>
+										<%end%>
+									</select>
 								</li>
 								<li>
-									<input name="exemplo-radio-button" type="radio"  />
-									<label>Radio Button 3</label>
+									<label>Dia da Semana</label>
+									<select>
+										<option>Domingo</option>
+										<option>Segunda</option>
+										<option>Terça</option>
+										<option>Quarta</option>
+										<option>Quinta</option>
+										<option>Sexta</option>
+										<option>Sábado</option>
+									</select>
 								</li>
 							</ul>
 						</div>
@@ -184,15 +205,119 @@
 				<footer>
 					<ul>
 						<li><span>Para ir para a próxma página, escolha o valor avançar no dropdown:</span></li>
+						
 					
 						<li>
-					
+							<select id="drop-down-avancar">
+								<% (0..9).to_a.each do |numero| %>
+									<% ('A'..'Z').to_a.each do |letra|%>
+										<option><%= letra %></option>
+									<%end%>
+										<option><%= numero %></option>
+								<%end%>
+								<option>Avançar</option>
+							</select>
 						</li>
+						
+						<li><a id="botao-avancar-drop-down" href="#padrao-maps" class="botao botao-azul">Avançar</a></li>
 	
 					</ul>
 				</footer>
 			
 			</article>
+			
+			<!-- Padrão maps -->
+			<article id="padrao-maps">
+				
+				<header class="azul">
+					<h2>Controles de Interfaces - Mapas</h2>
+				</header>
+				<div id="conteudo-artigos-padrao-interface">
+					
+					<div class="painel-descricao-padrao-interface ">
+						<div id="mapa-canvas"></div>
+					</div>
+					
+					<div class="painel-descricao-padrao-interface ">
+						<p>Note que:</p>
+						<ol>
+							<% @controles_interfaces.each do |controles| %>
+								
+								<% if controles.id == 2 %>
+							
+									<% controles.instrucao_usos.each do |instrucao_uso| %>
+										<%=content_tag(:li, instrucao_uso.instrucao )%>
+									<% end %>
+								
+								<%end%>
+							
+							<%end%>
+						</ol>
+					</div>
+
+				</div>
+			
+				<footer>
+					<ul>
+						<li><a id="botao-avancar-maps-pesquisa" href="#padrao-maps-pesquisa" class="botao botao-azul">Avançar</a></li>
+					</ul>
+				</footer>
+			
+			</article>
+			
+			
+			
+			
+			<article id="padrao-maps-pesquisa" onload="inicializaMapa()">
+				
+				<header class="azul">
+					<h2>Controles de Interfaces - Mapas</h2>
+				</header>
+				<div id="conteudo-artigos-padrao-interface">
+					<div id="mapa-canvas-pesquisa"></div>
+				</div>
+			
+				<footer>
+					<ul>
+						<li><span>Algumas Vezes quando clicamos em algum botão aparece uma nova janela. Experimente!</span></li>
+						<li><a id="janela-pesquisar-maps" href="#pesquisar-maps" class="botao botao-azul">Pesquisar</a></li>
+						<li><a id="botao-avancar-fim" href="#padrao-drop-down" class="botao botao-azul">Avançar</a></li>
+					</ul>
+				</footer>
+			
+			</article>
+			
+			<article id="pesquisar-maps">
+				
+				<header class="azul">
+					<h2>Controles de Interfaces - Mapas</h2>
+				</header>
+				<div id="conteudo-artigos-padrao-interface" class="container-formulario-pesquisar-mapas">
+					<form id="formulario-pesquisar-mapas">
+						<fieldset>
+							<legend>Endereço</legend>
+							<label>Endereço</label>
+							<input id="endereco-campo-pesquisar-mapas" type="text" autofocus="true" />
+							<a id="botao-pesquisar-endereco-maps" href="#pesquisar-maps" class="botao botao-azul">Pesquisar</a>
+						</fieldset>
+						<fieldset>
+							<legend>Rotas</legend>
+							<label>De</label>
+							<input id="endereco-origem-campo-pesquisar-mapas" type="text" autofocus="true" />
+							<label>Para</label>
+							<input id="endereco-destino-campo-pesquisar-mapas" type="text" autofocus="true" />
+							<a id="botao-pesquisar-rota-maps" href="#pesquisar-maps" class="botao botao-azul">Pesquisar</a>
+						</fieldset>
+					</form>
+				</div>
+				
+			</article>
+			
+			
+			
+
+			
+			
 		</div>
 	</section>
 </div>

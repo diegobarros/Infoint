@@ -24,8 +24,15 @@
   height: 30px;
   color: white;
 }
-
+ /*
 .container-artigos article div {
+  padding: 10px;
+  height: 462px;  
+}
+*/
+
+
+#conteudo-artigos-padrao-interface {
   padding: 10px;
   height: 462px;
   border: 1px solid #C9C0BB;
@@ -34,7 +41,9 @@
 .painel-descricao-padrao-interface {
   width: 447px;
   float: left;
-  border: 1px solid #C9C0BB;
+  height: 450px;
+  padding: 10px;
+   border: 1px solid #C9C0BB;
 }
 
 
@@ -78,29 +87,58 @@
   margin-left: 340px;
 }
 
-
-
-
-
+#padrao-drop-down footer ul li:last-child {
+  margin-left: 259px;
+  
+}
 
 .container-artigos article footer a {
   visibility: hidden;
 }
 
+#mapa-canvas{
+   height:452px;
+   width:446px;
+}
 
 
+#botao-avancar-maps-pesquisa { 
+  visibility:visible; 
+  margin-left: 475px;
+}
 
+#mapa-canvas-pesquisa{
+  width:100%;
+  height:100%;
+}
 
+#janela-pesquisar-maps {
+  visibility: visible;
+  margin-left: 150px;
+}
 
+.container-formulario-pesquisar-mapas {
+  width: 800px;
+  height: 600px;
+}
 
+#formulario-pesquisar-mapas  { padding: 15px; }
+#formulario-pesquisar-mapas fieldset label { margin-bottom: 5px; }
+#formulario-pesquisar-mapas fieldset a { margin-left: 640px; }
+#formulario-pesquisar-mapas fieldset {
+  color:#444;
+  border: 1px solid #C9C0BB;
+  border-radius: 5px;
+  padding: 15px;
+}
 
-
-
-
-
-
-
-
-
-
-
+#formulario-pesquisar-mapas fieldset:first-child { margin-bottom: 20px; }
+#formulario-pesquisar-mapas input[type='text'] {
+    border: 1px solid #DDDDDD;
+    box-shadow: 0 0 4px #AAAAAA;
+    color: #555555;
+    font-size: 16px;
+    margin: 4px 0 20px;
+    padding: 8px;
+    width: 718px;
+}
