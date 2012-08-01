@@ -47,6 +47,12 @@ $(document).ready(function() {
 	});
 	
 	
+	$("#janela-pesquisar-maps").click(function(){
+		$('#mensagem-botao-maps').remove();
+		$('#janela-pesquisar-maps').css('margin-left','0px');
+
+	});
+	
 
 });
 
