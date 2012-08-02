@@ -2,6 +2,12 @@
  * @author Diego Augusto de Faria Barros
  */
 
+var geocodificador;
+var mapa;
+var mapaPesquisa;
+var localizacaoInicialDoMapa;
+var navegadorSuportaGeolocalizacao = new Boolean();
+
 $(document).ready(function() {
 	
 	inicializaMapa();
@@ -53,17 +59,76 @@ $(document).ready(function() {
 
 	});
 	
+	
+	$("#botao-pesquisar-endereco-maps").click(function(){
+		
+		codificaEndereco();
+	})
+	
 
 });
 
 function inicializaMapa(){
 	
 	var configuracoesDoMapa = {
-		center: new google.maps.LatLng(-34.397, 150.644),
-		zoom: 8,
+		center: new google.maps.LatLng(-11.350796722383672, -50.625),
+		zoom: 6,
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	};
 	
-	var mapa = new google.maps.Map(document.getElementById("mapa-canvas"), configuracoesDoMapa)
-	var mapaPesquisa = new google.maps.Map(document.getElementById("mapa-canvas-pesquisa"), configuracoesDoMapa)
+	mapa = new google.maps.Map(document.getElementById("mapa-canvas"), configuracoesDoMapa);
+	mapaPesquisa = new google.maps.Map(document.getElementById("mapa-canvas-pesquisa"), configuracoesDoMapa);
+	geocodificador = new google.maps.Geocoder();
+	configuraLocalizacaoInicial()
 }
+
+function configuraLocalizacaoInicial(){
+	
+	if (navigator.geolocation) {
+			navigator.geolocation.getCurrentPosition(function(posicao){
+			localizacaoInicialDoMapa = new google.maps.LatLng(posicao.coords.latitude, posicao.coords.longitude);
+			mapa.setCenter(localizacaoInicialDoMapa);	
+			mapaPesquisa.setCenter(localizacaoInicialDoMapa);		
+		});
+		
+	} else{
+		localizacaoInicialDoMapa = new google.maps.LatLng(-11.350796722383672, -50.625);
+		mapa.setCenter(localizacaoInicialDoMapa);	
+		mapaPesquisa.setCenter(localizacaoInicialDoMapa);	
+	};
+}
+
+function codificaEndereco(){
+	
+	var endereco = document.getElementById('endereco-campo-pesquisar-mapas').value;
+
+	geocodificador.geocode({'address': endereco }, function(resultados, status) {
+		
+		if (status == google.maps.GeocoderStatus.OK) {
+			
+			mapaPesquisa.setCenter(resultados[0].geometry.location);
+			mapaPesquisa.setZoom(9);
+			
+			var marcador = new google.maps.Marker({
+				map: mapaPesquisa,
+				position: resultados[0].geometry.location
+			});
+
+		} else {
+			alert("O geocodificador não teve sucesso devido as seguintes razões: " + status);
+		}
+		
+	});
+}
+
+
+
+
+
+
+
+
+
+
+
+
