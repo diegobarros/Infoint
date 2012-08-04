@@ -28,7 +28,6 @@
 #conteudo-artigos-padrao-interface {
   padding: 10px;
   height: 462px;
-  border: 1px solid #C9C0BB;
 }
 
 .painel-descricao-padrao-interface {
@@ -36,7 +35,6 @@
   float: left;
   height: 450px;
   padding: 10px;
-   border: 1px solid #C9C0BB;
 }
 
 
@@ -53,16 +51,14 @@
   box-shadow:none;
   padding: 15px;
   height: 18px;
-  border: 1px solid #C9C0BB;
 }
 
 .container-artigos article footer ul li {
   display:inline-block;
-  margin-right: 8px;
 }
 
 .container-artigos article footer ul li:last-child {
-  margin-left: 375px;
+  margin-left: 400px;
 }
 
 #demonstracao-controle-interface {
@@ -77,11 +73,11 @@
 }
 
 #padrao-radio-button  footer ul li:last-child {
-  margin-left: 340px;
+  margin-left: 364px;
 }
 
 #padrao-drop-down footer ul li:last-child {
-  margin-left: 259px;
+  margin-left: 283px;
   
 }
 
@@ -97,7 +93,7 @@
 
 #botao-avancar-maps-pesquisa { 
   visibility:visible; 
-  margin-left: 475px;
+  margin-left: 448px;
 }
 
 #mapa-canvas-pesquisa{
@@ -107,7 +103,7 @@
 
 #janela-pesquisar-maps {
   visibility: visible;
-  margin-left: 150px;
+  margin-left: 191px;
 }
 
 .container-formulario-pesquisar-mapas {
@@ -136,11 +132,53 @@
     width: 718px;
 }
 
-
-
 #pesquisar-maps header {
-
  padding: 15px;
   height: 30px;
   color: white;
+}
+
+
+#botao-avancar-fim { margin-left: 349px; }
+#botao-voltar-maps-pesquisa { 
+  visibility: visible;
+  margin-left: 0px;
+}
+
+#mensagem-fim-padrao-interface {
+  margin-top: 15px;
+  height: 350px;
+  width:918px;
+}
+
+#titulo-fim-padrao-interface {
+  padding: 15px 10px;
+  border-bottom: 2px solid #C9C0BB;
+}
+#titulo-fim-padrao-interface h3 {
+  font-family: 'Ubuntu', sans-serif;
+  color:#666;
+  font-weight:300;
+  font-size: 26pt;
+  text-shadow: 2px 2px 4px #666;
+}
+
+
+#mensagem-fim-padrao-interface p {
+  font-size: 14pt;
+}
+
+#mensagem-fim-padrao-interface ul {
+  padding: 10px;
+}
+#mensagem-fim-padrao-interface ul li {
+   margin: 10px;
+  text-align:justify;
+}
+
+
+#botao-sair-padrao-inteface {
+  visibility: visible;
+  margin-left: 400px;
+  
 }

@@ -7,6 +7,8 @@ var mapa;
 var mapaPesquisa;
 var localizacaoInicialDoMapa;
 var navegadorSuportaGeolocalizacao = new Boolean();
+var servicoDeRotas;
+var mostraRotas;
 
 $(document).ready(function() {
 	
@@ -59,11 +61,21 @@ $(document).ready(function() {
 
 	});
 	
-	
+	// Pesquisa nos mapas
 	$("#botao-pesquisar-endereco-maps").click(function(){
-		
 		codificaEndereco();
-	})
+		$('#botao-avancar-fim').css("visibility", "visible");
+		$.fancybox.close();
+	});
+	
+	$("#botao-pesquisar-rota-maps").click(function(){
+		calculaRota();
+		$('#botao-avancar-fim').css("visibility", "visible");
+		$.fancybox.close();
+	});
+	
+	
+	// Habilita botão para sair
 	
 
 });
@@ -79,6 +91,9 @@ function inicializaMapa(){
 	mapa = new google.maps.Map(document.getElementById("mapa-canvas"), configuracoesDoMapa);
 	mapaPesquisa = new google.maps.Map(document.getElementById("mapa-canvas-pesquisa"), configuracoesDoMapa);
 	geocodificador = new google.maps.Geocoder();
+	servicoDeRotas = new google.maps.DirectionsService();
+	mostraRotas = new google.maps.DirectionsRenderer();
+	mostraRotas.setMap(mapaPesquisa);
 	configuraLocalizacaoInicial()
 }
 
@@ -107,13 +122,16 @@ function codificaEndereco(){
 		if (status == google.maps.GeocoderStatus.OK) {
 			
 			mapaPesquisa.setCenter(resultados[0].geometry.location);
-			mapaPesquisa.setZoom(9);
+			
 			
 			var marcador = new google.maps.Marker({
 				map: mapaPesquisa,
 				position: resultados[0].geometry.location
 			});
-
+			
+			mapaPesquisa.setZoom(75);
+			
+			
 		} else {
 			alert("O geocodificador não teve sucesso devido as seguintes razões: " + status);
 		}
@@ -121,7 +139,24 @@ function codificaEndereco(){
 	});
 }
 
+function calculaRota(){
+	var inicio = document.getElementById('endereco-origem-campo-pesquisar-mapas').value;
+	var fim = document.getElementById('endereco-destino-campo-pesquisar-mapas').value;
+	
+	var requisicao = {
+		origin: inicio,
+		destination: fim,
+		travelMode:google.maps.TravelMode.DRIVING
+	};
+	
+	servicoDeRotas.route(requisicao, function(resultado, status){
+		if (status == google.maps.DirectionsStatus.OK) {
+			mostraRotas.setDirections(resultado);
+		};
+		
+	});
 
+}
 
 
 

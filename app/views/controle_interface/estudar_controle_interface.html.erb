@@ -281,14 +281,13 @@
 					<ul>
 						<li id="mensagem-botao-maps"><span>Algumas Vezes quando clicamos em algum botão aparece uma nova janela. Experimente!</span></li>
 						<li><a id="janela-pesquisar-maps" href="#pesquisar-maps" class="botao botao-azul">Pesquisar</a></li>
-						<li><a id="botao-avancar-fim" href="#padrao-drop-down" class="botao botao-azul">Avançar</a></li>
+						<li><a id="botao-avancar-fim" href="#fim-padroes-interface" class="botao botao-azul">Avançar</a></li>
 					</ul>
 				</footer>
 			
 			</article>
 			
 			<article id="pesquisar-maps">
-				
 				<header class="azul">
 					<h2>Controles de Interfaces - Mapas</h2>
 				</header>
@@ -297,16 +296,16 @@
 						<fieldset>
 							<legend>Endereço</legend>
 							<label>Endereço</label>
-							<input id="endereco-campo-pesquisar-mapas" type="text" />
+							<input id="endereco-campo-pesquisar-mapas" type="text" spellcheck="true" required="true" />
 							<a id="botao-pesquisar-endereco-maps"  class="botao botao-azul">Pesquisar</a>
 						</fieldset>
 						<fieldset>
 							<legend>Rotas</legend>
 							<label>De</label>
-							<input id="endereco-origem-campo-pesquisar-mapas" type="text" />
+							<input id="endereco-origem-campo-pesquisar-mapas" type="text" spellcheck="true" required="true" />
 							<label>Para</label>
-							<input id="endereco-destino-campo-pesquisar-mapas" type="text" />
-							<a id="botao-pesquisar-rota-maps" href="#pesquisar-maps" class="botao botao-azul">Pesquisar</a>
+							<input id="endereco-destino-campo-pesquisar-mapas" type="text" spellcheck="true" required="true" />
+							<a id="botao-pesquisar-rota-maps" href="#pesquisar-maps" class="botao botao-azul" accesskey="enter">Pesquisar</a>
 						</fieldset>
 					</form>
 				</div>
@@ -314,6 +313,34 @@
 			</article>
 			
 			
+			<article id="fim-padroes-interface">
+				<header class="azul">
+					<h2>Controles de Interfaces - Fim</h2>
+				</header>
+				<div id="conteudo-artigos-padrao-interface">
+					<header id="titulo-fim-padrao-interface">
+						<h3>Parabéns!</h3>
+					</header>
+					<div id="mensagem-fim-padrao-interface" class="painel-descricao-padrao-interface ">
+						<p>Você concluiu o com sucesso o estudo dos padrões de interface!</p>
+						<p>Talvez você queira rever os padrões estudados</p>
+						<ul>
+							<li><a id="botao-avancar-checkbox" href="#padrao-checkbox">Checkbox</a></li>
+							<li><a id="botao-avancar-radio-button" href="#padrao-radio-button">Radio Button</a></li>
+							<li><a id="botao-avancar-drop-down" href="#padrao-drop-down">Drop-down</a></li>
+							<li><a id="botao-avancar-padrao-maps" href="#padrao-maps">Maps</a></li>
+						</ul>
+					</div>
+
+				</div>
+				<footer>
+					<ul>
+						<li><a id="botao-voltar-maps-pesquisa" href="#padrao-maps-pesquisa" class="botao botao-azul">Voltar</a></li>
+						<li><%= link_to "Sair", controle_interface_index_path, :id => "botao-sair-padrao-inteface", :class => "botao botao-azul" %></li>
+					</ul>
+				</footer>
+				
+			</article>
 			
 
 			
