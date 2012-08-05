@@ -1,4 +1,12 @@
 Infoint::Application.routes.draw do
+  get "abstracao_cognicao/index"
+
+  get "abstracao_cognicao/memoria"
+
+  get "abstracao_cognicao/logica"
+
+  get "abstracao_cognicao/verbal"
+
   get "controle_interface/index"
 
   get "controle_interface/estudar_controle_interface"

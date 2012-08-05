@@ -1,0 +1,30 @@
+<header id="cabecalho">
+	<div id="logo-pequeno">
+		<%= link_to inicio_index_path do %>
+			<h1>INFOINT</h1>
+		<% end %>
+	</div>
+</header>
+
+<div id="container">
+	<section id="container-descricao-conteudo">
+		<article>
+			<header class="lilas"><h2>Abstração e Cognição</h2></header>
+			<div>
+				<ul>
+					<li>
+						<h3><%= link_to "Lógica", abstracao_cognicao_logica_path %></h3>
+						
+	
+					</li>
+					<li>
+						<h3><%= link_to "Memória", abstracao_cognicao_memoria_path %></h3>
+					</li>
+					<li>
+						<h3><%= link_to "Analogia Verbal", abstracao_cognicao_verbal_path %></h3>
+					</li>
+				</ul>
+			</div>
+		</article>
+	</section>
+</div>
