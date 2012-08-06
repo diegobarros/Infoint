@@ -1,3 +1,29 @@
 // Place all the styles related to the AbstracaoCognicao controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#container-perguntas article {
+  border: 1px solid #C9C0BB;
+  
+}
+
+#container-perguntas article header {
+  padding: 15px;
+  height: 30px;
+  color: white;
+  border: 1px solid #C9C0BB;
+}
+
+.conteudo-perguntas { 
+  padding:10px;
+  height:460px;
+  overflow:scroll;
+  border: 1px solid #C9C0BB;
+}
+
+#container-perguntas footer {
+  margin:0;
+  box-shadow:none;
+  padding: 10px;
+  height: 32px;
+  border: 1px solid #C9C0BB;
+}
