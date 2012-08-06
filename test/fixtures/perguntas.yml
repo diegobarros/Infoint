@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  abstracao_cognicao: 
+  descricao: MyText
+  resposta: MyText
+  dica: MyText
+  url_imagem: MyText
+
+two:
+  abstracao_cognicao: 
+  descricao: MyText
+  resposta: MyText
+  dica: MyText
+  url_imagem: MyText

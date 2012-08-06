@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  nivel: 
+  categoria_abstracao_cognicao: 
+  nome_atividade: MyString
+
+two:
+  nivel: 
+  categoria_abstracao_cognicao: 
+  nome_atividade: MyString
