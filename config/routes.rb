@@ -1,4 +1,8 @@
 Infoint::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_useres, ActiveAdmin::Devise.config
+
   get "abstracao_cognicao/index"
 
   get "abstracao_cognicao/memoria"
