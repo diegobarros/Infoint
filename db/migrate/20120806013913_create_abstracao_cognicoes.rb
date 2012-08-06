@@ -3,7 +3,7 @@ class CreateAbstracaoCognicoes < ActiveRecord::Migration
     create_table :abstracao_cognicoes do |t|
       t.references :nivel
       t.references :categoria_abstracao_cognicao
-      t.string :nome_atividade
+      t.string :nome_atividade, :null => false
 
       t.timestamps
     end

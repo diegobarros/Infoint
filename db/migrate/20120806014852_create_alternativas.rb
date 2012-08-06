@@ -2,8 +2,8 @@ class CreateAlternativas < ActiveRecord::Migration
   def change
     create_table :alternativas do |t|
       t.references :pergunta
-      t.string :letra
-      t.text :descricao
+      t.string :letra, :null => false
+      t.text :descricao, :null => false
 
       t.timestamps
     end

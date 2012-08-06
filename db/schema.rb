@@ -11,7 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120729225316) do
+ActiveRecord::Schema.define(:version => 20120806014852) do
+
+  create_table "abstracao_cognicoes", :force => true do |t|
+    t.integer  "nivel_id"
+    t.integer  "categoria_abstracao_cognicao_id"
+    t.string   "nome_atividade",                  :null => false
+    t.datetime "created_at",                      :null => false
+    t.datetime "updated_at",                      :null => false
+  end
+
+  add_index "abstracao_cognicoes", ["categoria_abstracao_cognicao_id"], :name => "index_abstracao_cognicoes_on_categoria_abstracao_cognicao_id"
+  add_index "abstracao_cognicoes", ["nivel_id"], :name => "index_abstracao_cognicoes_on_nivel_id"
+
+  create_table "alternativas", :force => true do |t|
+    t.integer  "pergunta_id"
+    t.string   "letra",       :null => false
+    t.text     "descricao",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  add_index "alternativas", ["pergunta_id"], :name => "index_alternativas_on_pergunta_id"
 
   create_table "caracteres", :force => true do |t|
     t.integer  "tecla_id"
@@ -26,6 +47,12 @@ ActiveRecord::Schema.define(:version => 20120729225316) do
 
   add_index "caracteres", ["posicao_caractere_id"], :name => "index_caracteres_on_posicao_caractere_id"
   add_index "caracteres", ["tecla_id"], :name => "index_caracteres_on_tecla_id"
+
+  create_table "categoria_abstracao_cognicoes", :force => true do |t|
+    t.string   "nome",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "categoria_teclas", :force => true do |t|
     t.string   "nome",       :limit => 25, :null => false
@@ -55,6 +82,24 @@ ActiveRecord::Schema.define(:version => 20120729225316) do
   end
 
   add_index "instrucao_usos", ["controle_interface_id"], :name => "index_instrucao_usos_on_controle_interface_id"
+
+  create_table "niveis", :force => true do |t|
+    t.string   "nome",       :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "perguntas", :force => true do |t|
+    t.integer  "abstracao_cognicao_id"
+    t.text     "descricao",             :null => false
+    t.text     "resposta",              :null => false
+    t.text     "dica"
+    t.text     "url_imagem"
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
+  end
+
+  add_index "perguntas", ["abstracao_cognicao_id"], :name => "index_perguntas_on_abstracao_cognicao_id"
 
   create_table "posicao_caracteres", :force => true do |t|
     t.string   "posicao",    :limit => 10, :null => false
