@@ -13,6 +13,7 @@
  ActiveSupport::Inflector.inflections do |inflect|
    inflect.acronym 'RESTful'  
    inflect.clear
+   
    inflect.plural(/$/,  's')
    inflect.plural(/(s)$/i,  '\1')
    inflect.plural(/^(pai)s$/i, '\1ses')
@@ -60,4 +61,8 @@
    # Irregulares
    inflect.irregular "pais", "paises"
    inflect.irregular "caractere", "caracteres"
+   inflect.irregular "padraointerface", "padraointerfaces"
+   inflect.irregular "padrao_interface", "padrao_interfaces"
+   inflect.irregular "PadraoInterface", "PadraoInterfaces"
+
  end
