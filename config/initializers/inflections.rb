@@ -59,4 +59,5 @@
 
    # Irregulares
    inflect.irregular "pais", "paises"
+   inflect.irregular "caractere", "caracteres"
  end
