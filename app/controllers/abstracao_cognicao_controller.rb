@@ -9,5 +9,14 @@ class AbstracaoCognicaoController < ApplicationController
   end
 
   def verbal
+    
+    @analogias_verbais = AbstracaoCognicao.new;
+    @analogias_verbais = AbstracaoCognicao.find(1)
+    
+    respond_to do |format|
+      format.html
+      format.json { render html: @analogias_verbais }
+    end
+    
   end
 end

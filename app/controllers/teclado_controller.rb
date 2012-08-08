@@ -3,7 +3,7 @@ class TecladoController < ApplicationController
   end
 
   def estudar_teclado
-    @teclado = ::Teclado.new
+    @teclado = Teclado.new
     @teclado = Teclado.first
     
     respond_to do |format|
