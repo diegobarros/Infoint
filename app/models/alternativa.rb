@@ -1,4 +1,4 @@
 class Alternativa < ActiveRecord::Base
   belongs_to :pergunta
-  attr_accessible :descricao, :letra
+  attr_accessible :pergunta_id, :descricao, :letra
 end

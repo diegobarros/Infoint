@@ -61,8 +61,5 @@
    # Irregulares
    inflect.irregular "pais", "paises"
    inflect.irregular "caractere", "caracteres"
-   inflect.irregular "padraointerface", "padraointerfaces"
-   inflect.irregular "padrao_interface", "padrao_interfaces"
    inflect.irregular "PadraoInterface", "PadraoInterfaces"
-
  end

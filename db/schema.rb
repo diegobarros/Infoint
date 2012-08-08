@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120806181354) do
+ActiveRecord::Schema.define(:version => 20120808134719) do
 
   create_table "abstracao_cognicoes", :force => true do |t|
     t.integer  "nivel_id"
@@ -130,6 +130,7 @@ ActiveRecord::Schema.define(:version => 20120806181354) do
     t.text     "url_imagem"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
+    t.text     "comentario_resposta"
   end
 
   add_index "perguntas", ["abstracao_cognicao_id"], :name => "index_perguntas_on_abstracao_cognicao_id"
