@@ -9,7 +9,63 @@
 <div id="container">
 	<section class="container-artigos">
 		<div class="moldura">
-			<article>
+			
+			<% @analogias_verbais.perguntas.each do |pergunta| %>
+			
+				<article id=<%= pergunta.id%>>
+					
+					<header class="lilas">
+						<h2><%= @analogias_verbais.nome_atividade %></h2>
+					</header>
+					
+					<div class="conteudo-perguntas">
+						
+						<div>
+							<p><%= pergunta.descricao %></p>
+						</div>
+						<div>
+							<%if pergunta.alternativas.length > 1 %>
+							
+								<ul>
+									<% pergunta.alternativas.each do |alternativa| %>
+									
+										<li>
+											
+											<input name="alternativa" type="radio" value=<%=alternativa.letra%> />
+											<label>
+												<span><%= alternativa.letra %></span>-<span></span><%= alternativa.descricao %>
+											</label>
+											
+										</li>
+
+									<% end %>
+								</ul>
+
+							<% else %>
+							
+							
+								<% pergunta.alternativas.each do |alternativa| %>
+									
+									<p><%= alternativa.descricao %></p>
+							
+									<label>Resposta</label>
+									<input id="resposta-pergunta" type="text" spellcheck="true" required="true" />
+
+								<% end %>
+							
+									
+							<% end %>
+						</div>
+
+					</div>
+					<footer>
+						<li><a id="botao-avancar-pergunta" href=<%= ('#' + (pergunta.id + 1).to_s)%> class="botao botao-azul">Avançar</a></li>
+					</footer>
+				</article>
+
+			<% end %>
+
+			<article id="fim-verbal">
 				<header class="lilas">
 					<h2>Exemplo</h2>
 				</header>
