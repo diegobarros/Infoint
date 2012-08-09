@@ -85,9 +85,17 @@
   
 }
 
-.container-artigos article footer a {
+
+#botao-avancar-checkbox,
+#botao-avancar-radio-button,
+#botao-avancar-drop-down,
+#botao-avancar-fim
+{
   visibility: hidden;
 }
+
+#mensagem-fim-padrao-interface ul li a { visibility: visible; }
+
 
 #mapa-canvas{
    height:452px;
@@ -184,5 +192,4 @@
 #botao-sair-padrao-inteface {
   visibility: visible;
   margin-left: 400px;
-  
 }

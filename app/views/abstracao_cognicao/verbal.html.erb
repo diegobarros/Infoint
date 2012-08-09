@@ -60,7 +60,7 @@
 							<% end %>
 						</div>
 						
-						<div id="container-respostas">
+						<div id=<%= ("container-respostas-" + pergunta.id.to_s) %> class="container-respostas">
 							<ul>
 								<li><span>Resposta:</span><span><%= pergunta.comentario_resposta %></span></li>
 							</ul>
@@ -69,8 +69,8 @@
 					</div>
 					<footer id="rodape-perguntas">
 						<ul>
-							<li><a id="botao-responder-pergunta" href="#" class="botao botao-azul">Responder</a></li>
-							<li><a id="botao-avancar-pergunta" href=<%= ('#' + (pergunta.id + 1).to_s)%> class="botao botao-azul">Avançar</a></li>
+							<li><a id=<%= ("botao-responder-pergunta-" + pergunta.id.to_s) %> class="botao botao-azul responder-pergunta">Responder</a></li>
+							<li><a id=<%= ("botao-avancar-pergunta-" + pergunta.id.to_s) %> href=<%= ('#' + (pergunta.id + 1).to_s)%> class="botao botao-azul avancar-pergunta">Avançar</a></li>
 						</ul>
 					</footer>
 				</article>
