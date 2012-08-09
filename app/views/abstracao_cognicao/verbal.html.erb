@@ -20,22 +20,21 @@
 					
 					<div class="conteudo-perguntas">
 						
-						<div>
+						<div id="container-perguntas">
 							<p><%= pergunta.descricao %></p>
 						</div>
-						<div>
+						
+						<div id="container-alternativas">
 							<%if pergunta.alternativas.length > 1 %>
 							
 								<ul>
 									<% pergunta.alternativas.each do |alternativa| %>
 									
 										<li>
-											
 											<input name="alternativa" type="radio" value=<%=alternativa.letra%> />
 											<label>
-												<span><%= alternativa.letra %></span>-<span></span><%= alternativa.descricao %>
+												<span class="letra-alternativa"><%= alternativa.letra %></span>-<span class="alternativa"><%= alternativa.descricao %></span>
 											</label>
-											
 										</li>
 
 									<% end %>
@@ -46,20 +45,33 @@
 							
 								<% pergunta.alternativas.each do |alternativa| %>
 									
-									<p><%= alternativa.descricao %></p>
+									<p class="descricao-adicional"><%= alternativa.descricao %></p>
+									
+									<div id="resposta-aberta">
+										<label>Resposta</label>
+										<input id="resposta-pergunta" type="text" spellcheck="true" required="true" />
+									</div>
 							
-									<label>Resposta</label>
-									<input id="resposta-pergunta" type="text" spellcheck="true" required="true" />
+								
 
 								<% end %>
 							
 									
 							<% end %>
 						</div>
+						
+						<div id="container-respostas">
+							<ul>
+								<li><span>Resposta:</span><span><%= pergunta.comentario_resposta %></span></li>
+							</ul>
+						</div>
 
 					</div>
-					<footer>
-						<li><a id="botao-avancar-pergunta" href=<%= ('#' + (pergunta.id + 1).to_s)%> class="botao botao-azul">Avançar</a></li>
+					<footer id="rodape-perguntas">
+						<ul>
+							<li><a id="botao-responder-pergunta" href="#" class="botao botao-azul">Responder</a></li>
+							<li><a id="botao-avancar-pergunta" href=<%= ('#' + (pergunta.id + 1).to_s)%> class="botao botao-azul">Avançar</a></li>
+						</ul>
 					</footer>
 				</article>
 
