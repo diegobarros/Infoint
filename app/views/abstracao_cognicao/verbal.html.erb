@@ -31,7 +31,7 @@
 									<% pergunta.alternativas.each do |alternativa| %>
 									
 										<li>
-											<input name="alternativa" type="radio" value=<%=alternativa.letra%> />
+											<input name="alternativa" type="radio" value=<%=alternativa.letra%> required="true" />
 											<label>
 												<span class="letra-alternativa"><%= alternativa.letra %></span>-<span class="alternativa"><%= alternativa.descricao %></span>
 											</label>
@@ -63,6 +63,11 @@
 						<div id=<%= ("container-respostas-" + pergunta.id.to_s) %> class="container-respostas">
 							<ul>
 								<li><span>Resposta:</span><span><%= pergunta.comentario_resposta %></span></li>
+							</ul>
+							<ul id="resposta-correta">
+								<% pergunta.respostas.each do |r| %>
+									<li><%= r.resposta %></li>
+								<% end %>
 							</ul>
 						</div>
 
