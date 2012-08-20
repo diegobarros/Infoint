@@ -59,10 +59,10 @@ ActiveRecord::Schema.define(:version => 20120808142428) do
 
   create_table "alternativas", :force => true do |t|
     t.integer  "pergunta_id"
-    t.string   "letra",       :null => false
-    t.text     "descricao",   :null => false
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.string   "letra",       :limit => 2, :null => false
+    t.text     "descricao",                :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
   end
 
   add_index "alternativas", ["pergunta_id"], :name => "index_alternativas_on_pergunta_id"
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(:version => 20120808142428) do
   end
 
   create_table "controle_interfaces", :force => true do |t|
-    t.string   "nome"
+    t.string   "nome",       :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(:version => 20120808142428) do
 
   create_table "instrucao_usos", :force => true do |t|
     t.integer  "controle_interface_id"
-    t.text     "instrucao"
+    t.text     "instrucao",             :null => false
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end
