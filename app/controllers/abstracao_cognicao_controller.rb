@@ -6,6 +6,15 @@ class AbstracaoCognicaoController < ApplicationController
   end
 
   def logica
+    @perguntas_logica = AbstracaoCognicao.new;
+    @perguntas_logica = AbstracaoCognicao.find(2)
+    
+    respond_to do |format|
+      format.html
+      format.json { render html: @perguntas_logica }
+    end
+    
+    
   end
 
   def verbal

@@ -1,2 +1,119 @@
-<h1>AbstracaoCognicao#logica</h1>
-<p>Find me in app/views/abstracao_cognicao/logica.html.erb</p>
+<header id="cabecalho">
+	<div id="logo-pequeno">
+		<%= link_to abstracao_cognicao_index_path do %>
+			<h1>INFOINT</h1>
+		<% end %>
+	</div>
+</header>
+
+<div id="container">
+	<section class="container-artigos">
+		<div class="moldura">
+			
+			<% @perguntas_logica.perguntas.each.with_index do |pergunta, indice| %>
+			
+				<article id=<%= indice + 1 %>>
+					
+					<header class="lilas">
+						<h2><%= @perguntas_logica.nome_atividade %></h2>
+					</header>
+					
+					<div class="conteudo-perguntas">
+						
+						<div id="container-perguntas">
+							<p><%= pergunta.descricao %></p>
+						</div>
+						
+						<div id="container-alternativas">
+							<%if pergunta.alternativas.length > 1 %>
+							
+								<ul>
+									<% pergunta.alternativas.each do |alternativa| %>
+									
+										<li>
+											<input id=<%= ("resposta-pergunta-" + (indice + 1).to_s) %> name="alternativa" type="radio" value=<%=alternativa.letra%> required="true" />
+											<label>
+												<span class="letra-alternativa"><%= alternativa.letra %></span>-<span class="alternativa"><%= alternativa.descricao %></span>
+											</label>
+										</li>
+
+									<% end %>
+								</ul>
+
+							<% else %>
+							
+							
+								<% pergunta.alternativas.each do |alternativa| %>
+									
+									<p class="descricao-adicional"><%= alternativa.descricao %></p>
+									
+									<div id="resposta-aberta">
+										<label>Resposta</label>
+										<input id=<%= ("resposta-pergunta-" + (indice + 1).to_s) %> class="resposta-pergunta" type="text" spellcheck="true" required="true" />
+									</div>
+
+								<% end %>
+							
+									
+							<% end %>
+						</div>
+						
+						<div id=<%= ("container-respostas-" + (indice + 1).to_s) %> class="container-respostas">
+							<ul>
+								<li><span>Resposta:</span><span><%= pergunta.comentario_resposta %></span></li>
+							</ul>
+							
+							
+							
+							<ul id=<%= ("resposta-correta-" + (indice + 1).to_s) %> class="resposta-correta">
+								<% pergunta.respostas.each do |r| %>
+									<li><%= r.resposta %></li>
+								<% end %>
+							</ul>
+						</div>
+
+					</div>
+					<footer id="rodape-perguntas">
+						<ul>
+							<li><a id=<%= ("botao-responder-pergunta-" + (indice + 1).to_s) %> class="botao botao-azul responder-pergunta">Responder</a></li>
+							
+							
+							<% if (@perguntas_logica.perguntas.length - (indice + 1)) != 0 %>
+								<li><a id=<%= ("botao-avancar-pergunta-" + (indice + 1).to_s) %> href=<%= ('#' + (indice + 2).to_s)%> class="botao botao-azul avancar-pergunta">Avançar</a></li>
+							<% else %>
+								<li><a id=<%= ("botao-avancar-pergunta-" + (indice + 1).to_s) %> href="#fim-verbal" class="botao botao-azul avancar-pergunta">Avançar</a></li>
+							<% end %>	
+							
+						</ul>
+					</footer>
+				</article>
+
+			<% end %>
+
+			<article id="fim-verbal">
+				
+				<header class="lilas">
+					<h2><%= @perguntas_logica.nome_atividade %></h2>
+				</header>
+				
+				<div class="conteudo-perguntas">
+						
+					<header id="titulo-fim-padrao-interface">
+						<h3>Parabéns!</h3>
+					</header>
+					<p class="descricao-adicional mensagem-fim-exercicio">
+						Você concluiu todas as atividades relacionadas a analogias verbais!
+					</p>
+
+				</div>
+				<footer>
+					<ul>
+						
+						<li><%= link_to "Sair", abstracao_cognicao_index_path, :id => "botao-sair-analogia-verbal", :class => "botao botao-azul" %></li>
+						<li><%= @perguntas_logica.perguntas.length %></li>
+					</ul>
+				</footer>
+			</article>
+		</div>
+	</section>
+</div>

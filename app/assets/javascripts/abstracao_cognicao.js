@@ -25,9 +25,7 @@ $(document).ready(function(){
 			
 		} else {
 			var acertou = corrigePergunta(respostasCorretas, respostaUsuario);
-			
 			alert(acertou);
-			
 			$("#botao-avancar-pergunta-" + idBotaoAvancarPergunta ).css('visibility','visible');
 			$("#container-respostas-" + idBotaoAvancarPergunta ).css('visibility','visible');
 		}
@@ -80,31 +78,3 @@ function corrigePergunta(respostasCorretas, resposta){
 
 	return false;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-;;

@@ -12,7 +12,7 @@
 			
 			<% @analogias_verbais.perguntas.each do |pergunta| %>
 			
-				<article id=<%= pergunta.id%>>
+				<article id=<%= pergunta.id %>>
 					
 					<header class="lilas">
 						<h2><%= @analogias_verbais.nome_atividade %></h2>
@@ -76,7 +76,14 @@
 					<footer id="rodape-perguntas">
 						<ul>
 							<li><a id=<%= ("botao-responder-pergunta-" + pergunta.id.to_s) %> class="botao botao-azul responder-pergunta">Responder</a></li>
-							<li><a id=<%= ("botao-avancar-pergunta-" + pergunta.id.to_s) %> href=<%= ('#' + (pergunta.id + 1).to_s)%> class="botao botao-azul avancar-pergunta">Avançar</a></li>
+							
+							
+							<% if (@analogias_verbais.perguntas.length - pergunta.id) != 0 %>
+								<li><a id=<%= ("botao-avancar-pergunta-" + pergunta.id.to_s) %> href=<%= ('#' + (pergunta.id + 1).to_s)%> class="botao botao-azul avancar-pergunta">Avançar</a></li>
+							<% else %>
+								<li><a id=<%= ("botao-avancar-pergunta-" + pergunta.id.to_s) %> href="#fim-verbal" class="botao botao-azul avancar-pergunta">Avançar</a></li>
+							<% end %>	
+							
 						</ul>
 					</footer>
 				</article>
@@ -84,14 +91,27 @@
 			<% end %>
 
 			<article id="fim-verbal">
+				
 				<header class="lilas">
-					<h2>Exemplo</h2>
+					<h2><%= @analogias_verbais.nome_atividade %></h2>
 				</header>
+				
 				<div class="conteudo-perguntas">
-					<%= @analogias_verbais.perguntas %>
+						
+					<header id="titulo-fim-padrao-interface">
+						<h3>Parabéns!</h3>
+					</header>
+					<p class="descricao-adicional mensagem-fim-exercicio">
+						Você concluiu todas as atividades relacionadas a analogias verbais!
+					</p>
+
 				</div>
 				<footer>
-				
+					<ul>
+						
+						<li><%= link_to "Sair", abstracao_cognicao_index_path, :id => "botao-sair-analogia-verbal", :class => "botao botao-azul" %></li>
+						<li></li>
+					</ul>
 				</footer>
 			</article>
 		</div>
