@@ -12,7 +12,6 @@ var mostraRotas;
 
 $(document).ready(function() {
 	
-	inicializaMapa();
 	$("#janela-pesquisar-maps").fancybox();
 	
 	$("#checkbox-avancar").click(function(){
