@@ -3,7 +3,6 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #container-perguntas article {
   border: 1px solid #C9C0BB;
-  
 }
 
 #container-perguntas article header {
@@ -28,14 +27,15 @@
 #rodape-perguntas ul li {
   display:inline-block;
 }
+
 #container-perguntas footer ul li { display:inline-block; }
-
 #container-perguntas { padding: 20px; }
-
 #container-perguntas p { font-size: 14pt; }
 
-#container-alternativas { padding: 20px; }
-
+#container-alternativas { 
+   padding: 20px;
+   height: 250px;
+}
 #container-alternativas ul { list-style-type: none; }
 #container-alternativas ul li {
   padding: 5px;
@@ -47,9 +47,7 @@
   padding: 20px;
   border: 1px solid #C9C0BB;
   visibility: hidden;
-  
 }
-
 
 .container-respostas ul li { display:inline-block; }
 
@@ -61,16 +59,14 @@
 .letra-alternativa {
   font-weight:bold;
   margin-right: 5px;
-  
 }
 
 .alternativa {
   margin-left: 5px;
 }
 
-.resposta-pergunta {
-  width: 875px;
-}
+.resposta-pergunta { width: 875px; }
+.resposta-pergunta-medio { width: 607px; }
 
 #resposta-aberta {
   padding:30px 0px 10px;
@@ -89,17 +85,32 @@
   font-size: 16pt;
 }
 
-
 .avancar-pergunta{ 
   margin-left: 350px;
   visibility: hidden;
 }
+
 .responder-pergunta { visibility:visible; }
-
-
 .resposta-correta { display: none; }
-
-
 .mensagem-fim-exercicio {
   margin-top: 50px;
 }
+
+#imagem-pergunta {
+  width: 250px;
+  height: 250px;
+  float: left;
+  border: 1px solid black;
+}
+
+#imagem-pergunta img {
+  width: 250px;
+  height: 250px;
+}
+.painel-direito-pergunta {
+   margin-left: 20px;
+   width: 624px;
+   float: left;
+}
+
+
