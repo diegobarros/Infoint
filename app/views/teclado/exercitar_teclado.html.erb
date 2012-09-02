@@ -8,8 +8,7 @@
 <div id="container">
 	<section class="container-artigos">
 		<div id="moldura">
-			<% for i in 0..15 %>
-				<article id=<%= i+1 %>>
+			<article id="1">
 					
 					<header class="verde">
 						<h2>Exercício Teclado</h2>
@@ -23,12 +22,14 @@
 					
 					<footer id="rodape-perguntas">
 						<ul>
-							
-							
+							<li><%= link_to "Responder", teclado_exercitar_teclado_path, :class =>"botao botao-azul responder-pergunta" %></li>
+							<li><%= @vetor[0] %></li>
 						</ul>
 					</footer>
 				</article>
 
+			<% for i in 0..15 %>
+				
 			<% end %>
 		</div>
 	</section>
