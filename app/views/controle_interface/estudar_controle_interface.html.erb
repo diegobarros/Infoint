@@ -5,7 +5,7 @@
 		<% end %>
 	</div>
 </header>
-<div id="container" >
+<div id="container" onload="inicializaMapa()">
 	<section class="container-artigos">
 		
 		
@@ -219,12 +219,120 @@
 							</select>
 						</li>
 						
+						<li><a id="botao-avancar-menu-contexto" href="#padrao-menu-contexto" class="botao botao-azul">Avançar</a></li>
+	
+					</ul>
+				</footer>
+			
+			</article>
+			
+			
+			<!-- Padrão Menu Contexto -->
+			<article id="padrao-menu-contexto">
+				<header class="azul">
+					<h2>Controles de Interfaces - Menu Contexto</h2>
+				</header>
+				<div id="conteudo-artigos-padrao-interface">
+				
+					<div class="painel-descricao-padrao-interface ">
+						<div id="demonstracao-controle-interface">
+							<p>Os quadrados abaixo são chamados de <b>Dropdown</b></p>
+							
+							<div id="area-menu-contexto">
+								<span>Clique com o botão direito do mouse para visualizar o Menu Contexto</span>
+							</div>
+							
+							<div>
+								<div id="options">
+									<p>
+										<input type="button" id="disableItems" value="Desabilitar Cortar/Copiar" />
+										<input type="button" id="enableItems" value="Habilitar Cortar/Copiar" disabled="disabled" />
+									</p>
+									<p>
+										<input type="button" id="disableMenus" value="Desabilitar o Menu Contexto" />
+										<input type="button" id="enableMenus" value="Habilitar Menu Contexto" disabled="disabled" />
+									</p>
+								</div>
+							</div>
+							
+							<ul id="menu-contexto-1" class="contextMenu">
+								<li class="edit"><a href="#edit">Editar</a></li>
+								<li class="cut separator"><a href="#cut">Cortar</a></li>
+								<li class="copy"><a href="#copy">Copiar</a></li>
+								<li class="paste"><a href="#paste">Colar</a></li>
+								<li class="delete"><a href="#delete">Excluir</a></li>
+								<li class="quit separator"><a href="#quit">Sair</a></li>
+							</ul>
+							
+						</div>
+					
+					</div>
+					<div class="painel-descricao-padrao-interface ">
+						<p>Note que:</p>
+						<ol>
+							<% @controles_interfaces.each do |controles| %>
+								
+								<% if controles.id == 2 %>
+							
+									<% controles.instrucao_usos.each do |instrucao_uso| %>
+										<%=content_tag(:li, instrucao_uso.instrucao )%>
+									<% end %>
+								
+								<%end%>
+							
+							<%end%>
+						</ol>
+					</div>
+
+				</div>
+			
+				<footer>
+					<ul>
+						<li><span>Para ir para a próxma página, escolha o valor avançar no dropdown:</span></li>
+						
+					
+						<li>
+							<select id="drop-down-avancar">
+								<% (0..9).to_a.each do |numero| %>
+									<% ('A'..'Z').to_a.each do |letra|%>
+										<option><%= letra %></option>
+									<%end%>
+										<option><%= numero %></option>
+								<%end%>
+								<option>Avançar</option>
+							</select>
+						</li>
+						
 						<li><a id="botao-avancar-drop-down" href="#padrao-maps" class="botao botao-azul">Avançar</a></li>
 	
 					</ul>
 				</footer>
 			
 			</article>
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			<!-- Padrão maps -->
 			<article id="padrao-maps" onload="inicializaMapa()">

@@ -15,6 +15,10 @@
 					</header>
 
 					<div id="container-recaptcha" class="conteudo-perguntas">
+						
+						
+						
+						
 						<div id="recaptcha">
 							
 						</div>
@@ -22,7 +26,7 @@
 					
 					<footer id="rodape-perguntas">
 						<ul>
-							<li><%= link_to "Responder", teclado_exercitar_teclado_path, :class =>"botao botao-azul responder-pergunta" %></li>
+							<li><%= link_to "Responder", teclado_verificar_codigo_path, :id => "verificar-codigo", :class =>"botao botao-azul responder-pergunta" %></li>
 							<li><%= @vetor[0] %></li>
 						</ul>
 					</footer>

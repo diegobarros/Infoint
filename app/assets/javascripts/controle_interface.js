@@ -13,7 +13,7 @@ var mostraRotas;
 $(document).ready(function() {
 	
 	$("#janela-pesquisar-maps").fancybox();
-	
+	inicializaMapa();
 	$("#checkbox-avancar").click(function(){
 		var marcado = this.checked;
 		if (marcado) {
@@ -52,6 +52,61 @@ $(document).ready(function() {
 			$("#botao-avancar-drop-down").css("visibility", "hidden");
 		}
 	});
+	
+	
+	
+			// Show menu when #myDiv is clicked
+				$("#area-menu-contexto").contextMenu({
+					menu: 'menu-contexto-1'
+				},
+					function(action, el, pos) {
+					alert(
+						'Action: ' + action + '\n\n' +
+						'Element ID: ' + $(el).attr('id') + '\n\n' + 
+						'X: ' + pos.x + '  Y: ' + pos.y + ' (relative to element)\n\n' + 
+						'X: ' + pos.docX + '  Y: ' + pos.docY+ ' (relative to document)'
+						);
+				});
+				
+				// Show menu when a list item is clicked
+				$("#menu-contexto-1 UL LI").contextMenu({
+					menu: 'menu-contexto-1'
+				}, function(action, el, pos) {
+					alert(
+						'Action: ' + action + '\n\n' +
+						'Element text: ' + $(el).text() + '\n\n' + 
+						'X: ' + pos.x + '  Y: ' + pos.y + ' (relative to element)\n\n' + 
+						'X: ' + pos.docX + '  Y: ' + pos.docY+ ' (relative to document)'
+						);
+				});
+				
+				// Disable menus
+				$("#disableMenus").click( function() {
+					$('#area-menu-contexto, #menu-contexto-1 UL LI').disableContextMenu();
+					$(this).attr('disabled', true);
+					$("#enableMenus").attr('disabled', false);
+				});
+				
+				// Enable menus
+				$("#enableMenus").click( function() {
+					$('#area-menu-contexto, #menu-contexto-1 UL LI').enableContextMenu();
+					$(this).attr('disabled', true);
+					$("#disableMenus").attr('disabled', false);
+				});
+				
+				// Disable cut/copy
+				$("#disableItems").click( function() {
+					$('#menu-contexto-1').disableContextMenuItems('#cut,#copy');
+					$(this).attr('disabled', true);
+					$("#enableItems").attr('disabled', false);
+				});
+				
+				// Enable cut/copy
+				$("#enableItems").click( function() {
+					$('#menu-contexto-1').enableContextMenuItems('#cut,#copy');
+					$(this).attr('disabled', true);
+					$("#disableItems").attr('disabled', false);
+				});
 	
 	
 	$("#janela-pesquisar-maps").click(function(){

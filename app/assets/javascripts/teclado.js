@@ -1,10 +1,9 @@
 /**
  * @author Diego Augusto de Faria Barros
- */
+ 
 
 var acertos = 0;
 var erros = 0;
-const TOTAL_PERGUNTAS = 10;
 
 $(document).ready(function() {
 		
@@ -17,8 +16,9 @@ $(document).ready(function() {
   
   
   
-  $("#").click(function(){
+  $("#verificar-codigo").click(function(){
   	
   });
   
 });
+*/

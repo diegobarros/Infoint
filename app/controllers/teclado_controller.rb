@@ -28,9 +28,16 @@ class TecladoController < ApplicationController
   end
 
   def exercitar_teclado
+
     @vetor = Array.new
-      
-    verify_recaptcha ? @acertou = 1 : @acertou = 0;
+    render :html => @vetor
+    
+    
+  end
+  
+  def verificar_codigo
+    
+     @vetor = Array.new
     
     if verify_recaptcha
       @acertou = 1
@@ -39,13 +46,10 @@ class TecladoController < ApplicationController
     end
     
     @vetor.push(@acertou);
-
-    render :html => @vetor
     
+    render :text => @vetor[0]
     
   end
-  
-  
   
   
   

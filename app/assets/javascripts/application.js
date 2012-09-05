@@ -16,4 +16,10 @@
 //= require jquery.transit.min.js
 //= require fancybox/jquery.fancybox.js
 //= require fancybox/jquery.fancybox.pack.js
+//= require jquery.contextMenu-1.01/jquery.contextMenu.js
+//= require jquery.contextMenu-1.01/jquery.contextMenu.js
+//= require jquery.treeview/jquery.treeview.async.js
+//= require jquery.treeview/jquery.treeview.edit.js
+//= require jquery.treeview/jquery.treeview.js
+//= require jquery.treeview/jquery.treeview.sortable.js
 //= require_tree .

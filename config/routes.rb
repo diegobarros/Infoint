@@ -24,6 +24,10 @@ Infoint::Application.routes.draw do
   get "teclado/exercitar_teclado"
   
   get "teclado/visualizar_tecla"
+  
+  post "teclado/verificar_codigo"
+
+  
 
   get "home/index"
 
