@@ -9,7 +9,7 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *= require fancybox/jquery.fancybox.css
  *= require jquery.contextMenu-1.01/jquery.contextMenu.css
- *= require jquery.treeview.css
+ *= require jquery.treeview/jquery.treeview.css
  *= require_self
  *= require_tree .
  */
