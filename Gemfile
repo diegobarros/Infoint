@@ -10,6 +10,8 @@ gem 'activeadmin'
 gem "meta_search",    '>= 1.1.0.pre'
 gem "recaptcha", :require => "recaptcha/rails"
 
+gem 'galetahub-simple_captcha', :require => 'simple_captcha', :git => 'git://github.com/galetahub/simple-captcha.git'
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

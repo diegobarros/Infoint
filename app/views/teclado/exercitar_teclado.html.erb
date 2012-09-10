@@ -13,28 +13,29 @@
 					<header class="verde">
 						<h2>Exercício Teclado</h2>
 					</header>
-
-					<div id="container-recaptcha" class="conteudo-perguntas">
-						
-						
-						
-						
-						<div id="recaptcha">
-							
-						</div>
-					<div/>
 					
+					
+					<%= form_tag("verificar_codigo", :method => "get") do %>
+						<%= show_simple_captcha(:label => "Digite o Código da Imagem") %>
+						<%= submit_tag "Confirmar", :class => 'botao botao-azul' %>
+						
+						<label>Acertos: </label>
+						<input name="acertos" type="text" value="<%= params[:acertos]%>" readonly="reeadonly" />
+						
+						<label>Erros: </label>
+						<input name="erros" type="text" value="<%= params[:erros]%>" readonly="reeadonly" />
+						
+						
+					<% end %>
+
 					<footer id="rodape-perguntas">
 						<ul>
-							<li><%= link_to "Responder", teclado_verificar_codigo_path, :id => "verificar-codigo", :class =>"botao botao-azul responder-pergunta" %></li>
-							<li><%= @vetor[0] %></li>
+							<li>
+								<%= link_to "Responder", teclado_verificar_codigo_path, :id => "verificar-codigo", :class =>"botao botao-azul" %>
+							</li>
 						</ul>
 					</footer>
 				</article>
-
-			<% for i in 0..15 %>
-				
-			<% end %>
 		</div>
 	</section>
 </div>

@@ -23,34 +23,23 @@ class TecladoController < ApplicationController
     @tecla = Tecla.find(params[:format]);
     
     render :html => @tecla
-    
-
   end
 
   def exercitar_teclado
-
-    @vetor = Array.new
+    @estatisticas = Hash.new
     render :html => @vetor
-    
-    
+
   end
+  
+  
   
   def verificar_codigo
     
-     @vetor = Array.new
-    
-    if verify_recaptcha
-      @acertou = 1
+    if simple_captcha_valid?
+        redirect_to :controller => 'teclado', :action => 'exercitar_teclado', :acertos => params[:acertos].to_i.next
     else
-      @acertou = 0
+        redirect_to :controller => 'teclado', :action => 'exercitar_teclado', :erros => params[:erros].to_i.next
     end
-    
-    @vetor.push(@acertou);
-    
-    render :text => @vetor[0]
-    
+   
   end
-  
-  
-  
 end

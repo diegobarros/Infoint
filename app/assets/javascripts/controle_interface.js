@@ -52,8 +52,7 @@ $(document).ready(function() {
 			$("#botao-avancar-drop-down").css("visibility", "hidden");
 		}
 	});
-	
-	
+
 	
 			// Show menu when #myDiv is clicked
 				$("#area-menu-contexto").contextMenu({
@@ -211,13 +210,5 @@ function calculaRota(){
 	});
 
 }
-
-
-
-
-
-
-
-
 
 

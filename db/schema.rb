@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120808142428) do
+ActiveRecord::Schema.define(:version => 20120909175911) do
 
   create_table "abstracao_cognicoes", :force => true do |t|
     t.integer  "nivel_id"
@@ -59,10 +59,10 @@ ActiveRecord::Schema.define(:version => 20120808142428) do
 
   create_table "alternativas", :force => true do |t|
     t.integer  "pergunta_id"
-    t.string   "letra",       :limit => 2, :null => false
-    t.text     "descricao",                :null => false
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.string   "letra",       :null => false
+    t.text     "descricao",   :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "alternativas", ["pergunta_id"], :name => "index_alternativas_on_pergunta_id"
@@ -94,7 +94,7 @@ ActiveRecord::Schema.define(:version => 20120808142428) do
   end
 
   create_table "controle_interfaces", :force => true do |t|
-    t.string   "nome",       :null => false
+    t.string   "nome"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -109,7 +109,7 @@ ActiveRecord::Schema.define(:version => 20120808142428) do
 
   create_table "instrucao_usos", :force => true do |t|
     t.integer  "controle_interface_id"
-    t.text     "instrucao",             :null => false
+    t.text     "instrucao"
     t.datetime "created_at",            :null => false
     t.datetime "updated_at",            :null => false
   end
@@ -149,6 +149,15 @@ ActiveRecord::Schema.define(:version => 20120808142428) do
   end
 
   add_index "respostas", ["pergunta_id"], :name => "index_respostas_on_pergunta_id"
+
+  create_table "simple_captcha_data", :force => true do |t|
+    t.string   "key",        :limit => 40
+    t.string   "value",      :limit => 6
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "simple_captcha_data", ["key"], :name => "idx_key"
 
   create_table "teclados", :force => true do |t|
     t.integer  "idioma_id"

@@ -18,7 +18,6 @@
 //= require fancybox/jquery.fancybox.pack.js
 //= require jquery.contextMenu-1.01/jquery.contextMenu.js
 //= require jquery.contextMenu-1.01/jquery.contextMenu.js
-
 //= require_tree .
 
 
