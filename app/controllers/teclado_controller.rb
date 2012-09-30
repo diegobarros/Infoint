@@ -1,7 +1,5 @@
 class TecladoController < ApplicationController
   
-
-    
   
   def index
   end
@@ -25,9 +23,13 @@ class TecladoController < ApplicationController
     render :html => @tecla
   end
 
+
+
+
+
   def exercitar_teclado
-    @estatisticas = Hash.new
-    render :html => @vetor
+    
+    render :html => @estatisticas 
 
   end
   
@@ -36,9 +38,11 @@ class TecladoController < ApplicationController
   def verificar_codigo
     
     if simple_captcha_valid?
-        redirect_to :controller => 'teclado', :action => 'exercitar_teclado', :acertos => params[:acertos].to_i.next
+        session[:acertos] = params[:acertos].to_i.next
+        redirect_to :controller => 'teclado', :action => 'exercitar_teclado', :acertos => params[:acertos]
     else
-        redirect_to :controller => 'teclado', :action => 'exercitar_teclado', :erros => params[:erros].to_i.next
+        session[:erros] = params[:erros].to_i.next
+       redirect_to :controller => 'teclado', :action => 'exercitar_teclado', :erros => params[:erros]
     end
    
   end

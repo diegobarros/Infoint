@@ -15,24 +15,35 @@
 					</header>
 					
 					
-					<%= form_tag("verificar_codigo", :method => "get") do %>
-						<%= show_simple_captcha(:label => "Digite o Código da Imagem") %>
-						<%= submit_tag "Confirmar", :class => 'botao botao-azul' %>
+					<%= form_tag("verificar_codigo", :id => "formulario-captcha", :method => "get") do %>
+					
+						<fieldset>
+							<legend>Captcha</legend>
+							<%= show_simple_captcha(:label => "Digite o Código da Imagem") %>	
+							<%= submit_tag "Confirmar", :class => 'botao botao-azul', :id => "botao-confirmar-captcha" %>
+						</fieldset>
+					
+						<fieldset>
+							<legend>Estatísticas</legend>
+							
+							<label>Acertos: </label>
+							<input name="acertos" type="text" value="<%=session[:acertos] %>" readonly="reeadonly" />
+							
+							
 						
-						<label>Acertos: </label>
-						<input name="acertos" type="text" value="<%= params[:acertos]%>" readonly="reeadonly" />
-						
-						<label>Erros: </label>
-						<input name="erros" type="text" value="<%= params[:erros]%>" readonly="reeadonly" />
-						
+							<label>Erros: </label>
+							<input name="erros" type="text" value="<%=session[:erros]%>" readonly="reeadonly" />
+							
+						</fieldset>
 						
 					<% end %>
 
 					<footer id="rodape-perguntas">
 						<ul>
 							<li>
-								<%= link_to "Responder", teclado_verificar_codigo_path, :id => "verificar-codigo", :class =>"botao botao-azul" %>
+								<%= link_to "Sair", teclado_index_path, :id => "sair-exercitar-teclado", :class =>"botao botao-azul", :value => " " %>
 							</li>
+							<li> </li>
 						</ul>
 					</footer>
 				</article>
