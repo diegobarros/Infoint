@@ -236,6 +236,7 @@
 					<div class="painel-descricao-padrao-interface ">
 						<div id="demonstracao-controle-interface">
 							<p>Os quadrados abaixo são chamados de <b>Dropdown</b></p>
+							<!--
 							<ul id="arvore">
 									<li><a href="?1">Item 1</a>
 											<ul>
@@ -330,7 +331,7 @@
 					</ul>
 				</li>
 			</ul>
-						</div>
+				-->		</div>
 					</div>
 					<div class="painel-descricao-padrao-interface ">
 						<p>Note que:</p>
@@ -379,12 +380,12 @@
 							<div>
 								<div id="options">
 									<p>
-										<input type="button" id="disableItems" value="Desabilitar Cortar/Copiar" />
-										<input type="button" id="enableItems" value="Habilitar Cortar/Copiar" disabled="disabled" />
+										<input  id="disableItems" type="button" value="Desabilitar Cortar/Copiar" class="botao-2" />
+										<input  id="enableItems" class="botao-2" type="button" value="Habilitar Cortar/Copiar" disabled="disabled" />
 									</p>
-									<p>
-										<input type="button" id="disableMenus" value="Desabilitar o Menu Contexto" />
-										<input type="button" id="enableMenus" value="Habilitar Menu Contexto" disabled="disabled" />
+									<p id="linha-botoes-2">
+										<input  id="disableMenus" class="botao-2" type="button" value="Desabilitar o menu" />
+										<input  id="enableMenus" class="botao-2" type="button" value="Habilitar o menu" disabled="disabled" />
 									</p>
 								</div>
 							</div>
@@ -422,21 +423,7 @@
 			
 				<footer>
 					<ul>
-						<li><span>Para ir para a próxma página, escolha o valor avançar no dropdown:</span></li>
-						
-					
-						<li>
-							<select id="drop-down-avancar">
-								<% (0..9).to_a.each do |numero| %>
-									<% ('A'..'Z').to_a.each do |letra|%>
-										<option><%= letra %></option>
-									<%end%>
-										<option><%= numero %></option>
-								<%end%>
-								<option>Avançar</option>
-							</select>
-						</li>
-						
+						<li><span>Para ir para a próxma página, escolha a opção avançar no menu contexto de desabilite todos os botões:</span></li>
 						<li><a id="botao-avancar-menu-contexto" href="#padrao-maps" class="botao botao-azul">Avançar</a></li>
 	
 					</ul>

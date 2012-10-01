@@ -231,9 +231,45 @@
    margin: 10px;
   text-align:justify;
 }
-
+#botao-avancar-menu-contexto{
+  margin-left: -280px;
+}
 
 #botao-sair-padrao-inteface {
   visibility: visible;
   margin-left: 400px;
 }
+
+
+#disableMenus{
+  margin-left: 50px;
+}
+
+.botao-2 {
+    background-color: #DDDDDD;
+    background-image: -moz-linear-gradient(center top , #EEEEEE, #CCCCCC);
+    border: 1px solid #777777;
+    border-radius: 0.2em 0.2em 0.2em 0.2em;
+    box-shadow: 0 0 1px 1px rgba(255, 255, 255, 0.8) inset, 0 1px 0 rgba(0, 0, 0, 0.3);
+    color: #333333;
+    display: inline-block;
+    font: bold 0.9em Arial,Helvetica;
+    margin: 0.5em;
+    padding: 0 0.5em;
+    text-decoration: none;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    white-space: nowrap;
+}
+
+.botao-2[disabled], .botao-2[disabled]:hover, .botao-2.disabled, .botao-2.disabled:hover {
+    background: none repeat scroll 0 0 #EEEEEE;
+    border-color: #AAAAAA;
+    box-shadow: none;
+    color: #AAAAAA;
+    cursor: default;
+    position: static;
+    text-shadow: none;
+}
+
+
+
