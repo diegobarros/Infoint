@@ -391,4 +391,31 @@
 }
 
 #container-descricao-tecla p { padding-top:10px; }
+#formulario-captcha {
+  width: 800px;
+  height: 470px;
+  margin: 0 auto;
+}
 
+#formulario-captcha fieldset {
+  padding: 20px;
+  margin: 10px 200px;
+  border-radius: 10px;
+  border: 1px solid #C9C0BB;
+}
+
+#formulario-captcha legend {
+  font-size: 10pt;
+}
+
+#formulario-captcha div {
+  margin: 0 auto;
+}
+
+#formulario-captch fieldset:last-child {
+  margin-right: 20px;
+}
+
+#botao-confirmar-captcha {
+  margin-top: 20px;
+}

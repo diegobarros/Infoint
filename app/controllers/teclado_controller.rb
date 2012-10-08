@@ -14,6 +14,7 @@ class TecladoController < ApplicationController
     end
   end
   
+  
   def visualizar_tecla
     @teclado = Teclado.new
     @teclado = Teclado.first
@@ -23,13 +24,7 @@ class TecladoController < ApplicationController
     render :html => @tecla
   end
 
-
-
-
-
   def exercitar_teclado
-    
-    render :html => @estatisticas 
 
   end
   

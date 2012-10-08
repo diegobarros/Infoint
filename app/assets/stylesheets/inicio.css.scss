@@ -56,10 +56,11 @@
 }
 
 #menu-inicio article div {
-    border: 1px solid #C9C0BB;
     padding: 5px;
     margin: 25px 5px;
 }
+
+#menu-inicio li { list-style-type:none; }
 
 #menu-inicio ul li h3 {
     font-family: 'Ubuntu',sans-serif;
@@ -92,6 +93,8 @@
     padding: 15px;
     margin: 20px 10px;
 }
+
+#container-descricao-conteudo li { list-style-type:none; }
 
 #container-descricao-conteudo ul li h3 {
     font-family: 'Ubuntu',sans-serif;
