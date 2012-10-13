@@ -39,6 +39,7 @@
   float: left;
   height: 450px;
   padding: 10px;
+  overflow: auto;
 }
 
 
@@ -124,22 +125,6 @@
         margin: 2px 0px;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 #mapa-canvas{
@@ -271,6 +256,3 @@
     position: static;
     text-shadow: none;
 }
-
-
-
