@@ -10,6 +10,7 @@ var navegadorSuportaGeolocalizacao = new Boolean();
 var servicoDeRotas;
 var mostraRotas;
 
+
 var test_data =
 	            [0, { label: "Documentos", href:"#" },
 	             1, { label: "Músicas", href:"#" },
@@ -59,9 +60,12 @@ var test_data =
 
 $(document).ready(function() {
 	
-	$("#janela-pesquisar-maps").fancybox();
+
 	inicializaMapa();
-	tree_Init()
+	tree_Init();
+
+	
+	
 	$("#checkbox-avancar").click(function(){
 		var marcado = this.checked;
 		if (marcado) {
@@ -156,11 +160,21 @@ $(document).ready(function() {
 				});
 	
 	
+	
+	
 	$("#janela-pesquisar-maps").click(function(){
 		$('#mensagem-botao-maps').remove();
 		$('#janela-pesquisar-maps').css('margin-left','0px');
 	});
 	
+	
+	$("#janela-pesquisar-maps").click(function(){
+		
+		$("#janela-pesquisar-maps").fancybox();
+		
+		
+		
+	})
 	// Pesquisa nos mapas
 	$("#botao-pesquisar-endereco-maps").click(function(){
 		codificaEndereco();
