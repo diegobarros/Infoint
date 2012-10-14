@@ -59,7 +59,7 @@ var test_data =
 
 $(document).ready(function() {
 	
-	$("#pesquisar-maps").fancybox();
+	$("#janela-pesquisar-maps").fancybox();
 	inicializaMapa();
 	tree_Init()
 	$("#checkbox-avancar").click(function(){
@@ -156,10 +156,9 @@ $(document).ready(function() {
 				});
 	
 	
-	$("#pesquisar-maps").click(function(){
+	$("#janela-pesquisar-maps").click(function(){
 		$('#mensagem-botao-maps').remove();
 		$('#janela-pesquisar-maps').css('margin-left','0px');
-
 	});
 	
 	// Pesquisa nos mapas
