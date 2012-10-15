@@ -60,12 +60,10 @@ var test_data =
 
 $(document).ready(function() {
 	
-
-	inicializaMapa();
-	tree_Init();
-
 	
 	
+	$("#janela-pesquisar-maps").fancybox();
+
 	$("#checkbox-avancar").click(function(){
 		var marcado = this.checked;
 		if (marcado) {
@@ -158,7 +156,14 @@ $(document).ready(function() {
 					$(this).attr('disabled', true);
 					$("#disableItems").attr('disabled', false);
 				});
-	
+				
+	$("#botao-avancar-drop-down").click(function(){
+		tree_Init();
+	})		
+				
+	$("#botao-avancar-menu-contexto").click(function(){
+		inicializaMapa();
+	})
 	
 	
 	
@@ -169,12 +174,9 @@ $(document).ready(function() {
 	
 	
 	$("#janela-pesquisar-maps").click(function(){
-		
 		$("#janela-pesquisar-maps").fancybox();
-		
-		
-		
-	})
+	});
+	
 	// Pesquisa nos mapas
 	$("#botao-pesquisar-endereco-maps").click(function(){
 		codificaEndereco();
@@ -256,6 +258,7 @@ function codificaEndereco(){
 function calculaRota(){
 	var inicio = document.getElementById('endereco-origem-campo-pesquisar-mapas').value;
 	var fim = document.getElementById('endereco-destino-campo-pesquisar-mapas').value;
+                              
 	
 	var requisicao = {
 		origin: inicio,
@@ -263,8 +266,12 @@ function calculaRota(){
 		travelMode:google.maps.TravelMode.DRIVING
 	};
 	
+	
+	alert(requisicao)
+	
 	servicoDeRotas.route(requisicao, function(resultado, status){
 		if (status == google.maps.DirectionsStatus.OK) {
+			
 			mostraRotas.setDirections(resultado);
 		};
 		

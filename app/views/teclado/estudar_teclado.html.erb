@@ -12,7 +12,21 @@
 			<header class="verde">
 				<h3>Teclado</h3>
 			</header>
-			<p></p>
+			<div id="descricao-teclado">
+				<p>
+					O teclado de computador é um tipo de periférico utilizado pelo usuário para a entrada manual no sistema de dados e comandos. 
+					Possui teclas representando letras, números, símbolos e outras funções, baseado no modelo de teclado das antigas máquinas de 
+					escrever.
+				</p>
+				<p>
+					Os teclados mais comuns são projetados para a escrita de textos e inserção de comandos de sistema. Juntamente ao rato,
+					é uma das principais interfaces entre o computador e o utilizador.
+				</p>
+				<p>
+					Clique com o mouse nos botões do teclado abaixo, e conheça mais sobre cada tecla.
+				</p>
+			</div>
+			
 		</article>
 	</div>
 </div>
@@ -30,12 +44,12 @@
 						<li>
 							<% if tecla.id != 14 && tecla.id != 15 && tecla.id != 16 then %>
 								
-								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla tecla-de-funcao" do %>
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla tecla-de-funcao" do %>
 									<%=content_tag(:span, tecla.nome) %>
 								<%end%>
 								
 							<%else%>
-								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla" do %>
 									<%=content_tag(:span, tecla.nome) %>
 								<%end%>
 							<%end%>	
@@ -52,7 +66,7 @@
 					<% if tecla.categoria_tecla.id == 2 %>
 					
 						<li>
-							<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
+							<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla" do %>
 							
 								<% tecla.caracteres.each do |caractere| %>
 									
@@ -78,10 +92,65 @@
 		</div>
 		
 		<div id="categoria-teclas-navegacao">
+			<ul>
+				<% @teclado.teclas.each do |tecla| %>
+					<% if tecla.categoria_tecla.id == 3 %>
+					
+						<% if tecla.id != 85 && tecla.id != 86 && tecla.id != 87 && tecla.id != 88 then %>
+							<li>
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla" do %>
+							
+									<% tecla.caracteres.each do |caractere| %>
+										<%=content_tag(:span, caractere.simbolo) %>
+									<% end %>
+
+								<%end%>
+							</li>
+						<% end %>
+
+					<%end%>
+				<%end%>
+			</ul>
+			<ul id="setas">
+				<% @teclado.teclas.each do |tecla| %>
+					<% if tecla.categoria_tecla.id == 3 %>
+					
+						<% if tecla.id == 85 || tecla.id == 86 || tecla.id == 87 || tecla.id == 88 then %>
+							<li>
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla" do %>
+							
+									<% tecla.caracteres.each do |caractere| %>
+										<%=content_tag(:span, caractere.simbolo) %>
+									<% end %>
+
+								<%end%>
+							</li>
+						<% end %>
+					<%end%>
+				<%end%>
+				
+			</ul>
 			
 		</div>
 		
 		<div id="categoria-teclas-numericas">
+			<ul>
+				<% @teclado.teclas.each do |tecla| %>
+					<% if tecla.categoria_tecla.id == 4 %>
+					
+						<li>
+							<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla" do %>
+							
+								<% tecla.caracteres.each do |caractere| %>
+									<%=content_tag(:span, caractere.simbolo) %>
+								<% end %>
+
+							<%end%>
+						</li>
+
+					<%end%>
+				<%end%>
+			</ul>
 			
 		</div>
 			

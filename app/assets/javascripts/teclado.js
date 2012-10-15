@@ -1,24 +1,13 @@
 /**
  * @author Diego Augusto de Faria Barros
- 
-
-var acertos = 0;
-var erros = 0;
-
-$(document).ready(function() {
-		
-   Recaptcha.create("6Le0xdUSAAAAAFyq5UPtKiO13txN467f3MZhTcab", 'recaptcha',
-    {
-      theme: "red",
-      callback: Recaptcha.focus_response_field
-    }
-  );
-  
-  
-  
-  $("#verificar-codigo").click(function(){
-  	
-  });
-  
+ */
+$(document).ready(function(){
+	$("#ctrlEsquerdo").addClass("ctrl");
+	$("#ctrlDireito").addClass("ctrl");
+	$("#Alt").addClass("alt");
+	$("#altGr").addClass("alt");
+	$("#shiftDireito").addClass("shift");
+	$("#shiftEsquerdo").addClass("shift");
+	$("#menu").addClass("menu");
+	$("#windows").addClass("windows");
 });
-*/

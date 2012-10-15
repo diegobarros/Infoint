@@ -11,7 +11,7 @@
 	<div id="painel-descricao-teclado">
 					
 			<header class="verde">
-				<h3><%= @tecla.nome %></h3>
+				<h3>Descrição das Teclas</h3>
 			</header>
 		<aside>
 			<ul>
@@ -63,12 +63,12 @@
 						<li>
 							<% if tecla.id != 14 && tecla.id != 15 && tecla.id != 16 then %>
 								
-								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla tecla-de-funcao" do %>
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla tecla-de-funcao" do %>
 									<%=content_tag(:span, tecla.nome) %>
 								<%end%>
 								
 							<%else%>
-								<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla" do %>
 									<%=content_tag(:span, tecla.nome) %>
 								<%end%>
 							<%end%>	
@@ -84,7 +84,7 @@
 					<% if tecla.categoria_tecla.id == 2 %>
 					
 						<li>
-							<%= link_to teclado_visualizar_tecla_path(tecla.id), :class => "tecla" do %>
+							<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla" do %>
 							
 								<% tecla.caracteres.each do |caractere| %>
 									
@@ -110,10 +110,65 @@
 		</div>
 		
 		<div id="categoria-teclas-navegacao">
+			<ul>
+				<% @teclado.teclas.each do |tecla| %>
+					<% if tecla.categoria_tecla.id == 3 %>
+					
+						<% if tecla.id != 85 && tecla.id != 86 && tecla.id != 87 && tecla.id != 88 then %>
+							<li>
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla" do %>
+							
+									<% tecla.caracteres.each do |caractere| %>
+										<%=content_tag(:span, caractere.simbolo) %>
+									<% end %>
+
+								<%end%>
+							</li>
+						<% end %>
+
+					<%end%>
+				<%end%>
+			</ul>
+			<ul id="setas">
+				<% @teclado.teclas.each do |tecla| %>
+					<% if tecla.categoria_tecla.id == 3 %>
+					
+						<% if tecla.id == 85 || tecla.id == 86 || tecla.id == 87 || tecla.id == 88 then %>
+							<li>
+								<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla" do %>
+							
+									<% tecla.caracteres.each do |caractere| %>
+										<%=content_tag(:span, caractere.simbolo) %>
+									<% end %>
+
+								<%end%>
+							</li>
+						<% end %>
+					<%end%>
+				<%end%>
+				
+			</ul>
 			
 		</div>
 		
 		<div id="categoria-teclas-numericas">
+			<ul>
+				<% @teclado.teclas.each do |tecla| %>
+					<% if tecla.categoria_tecla.id == 4 %>
+					
+						<li>
+							<%= link_to teclado_visualizar_tecla_path(tecla.id), :id => tecla.nome, :class => "tecla" do %>
+							
+								<% tecla.caracteres.each do |caractere| %>
+									<%=content_tag(:span, caractere.simbolo) %>
+								<% end %>
+
+							<%end%>
+						</li>
+
+					<%end%>
+				<%end%>
+			</ul>
 			
 		</div>
 			
